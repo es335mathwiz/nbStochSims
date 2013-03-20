@@ -1,0 +1,640 @@
+
+export MALLOC_CHECK_=
+
+
+
+export EDITOR=emacs
+export RES2=/msu/res2/m1gsa00
+export PROJ3=/msu/res2/m1gsa00/proj3
+export PROJ5=/msu/res2/m1gsa00/proj5
+export WINDIR=$RES2/windowsDirs
+export MYSCRTCH=/msu/scratch/m1gsa00
+export BKS=/bks/proj
+export DHOME=$PROJ3/dataHome
+export THOME=$DHOME/texFiles
+
+export SWISHDIR=$PROJ3/garyFiles/big/swish
+
+export CLASSPATH=$HOME/myJava
+
+
+#for msu stuff
+set path = (\
+/msu/res1/Software/ \
+$path) 
+set path = (\
+/msu/res1/Software/bin  \
+$path \
+)
+
+
+
+#for git
+set path = (\
+#/msu/res2/m1gsa00/bin/ \
+#/msu/res2/m1gsa00/git165RH5Installed/bin \
+$path) 
+export GIT_EDITOR emacs
+export mergeConflictDir  /msu/res2/Shared_Projects/MPSCode/mergeConflictResolution
+export amyDir  $mergeConflictDir/amy/amySharedProject
+export benDir  $mergeConflictDir/ben/benSharedProject
+export carlDir  $mergeConflictDir/carl/carlSharedProject
+
+
+
+#for jedit
+set path = (\
+$HOME/scratch/bin \
+$path) 
+
+#for  pdfeditors
+set path = (\
+/msu/scratch/m1gsa00/learnProjection/proto/authoritative/CAM-PDF-1.52/bin \
+$path) 
+
+
+export LC_ALL C
+export LANGUAGE C
+export LANG C
+export LIBDIR /msu/scratch/m1gsa00/learnProjection/proto/authoritative/CAM-PDF-1.52:/lib/CAM
+
+#for bjam
+#set path = (\
+#$HOME/scratch/bayes++/boost-jam-3.1.13-1-linuxx86/ \
+#$path) 
+
+#for boost different from bjam just above reconcile someday
+#export BOOST_ROOT /msu/scratch/m1gsa00/boost_1_47_0
+export BOOST_ROOT /msu/scratch/m1gsa00/boostLib/
+
+
+#for scim
+set path = (\
+$RES2/chinese/myLocal/bin \
+$path) 
+
+
+
+
+#for bison
+set path = (\
+$MYSCRTCH/bin \
+$path) 
+
+
+
+#for ant
+export ANT_HOME $RES2/apache-ant-1.6.5 
+#export JAVA_HOME /opt/jdk1.5.0
+#export JAVA_HOME $MYSCRTCH/jdk1.6.0_02
+#export JAVA_HOME $MYSCRTCH/jdk1.6.0_18
+export JAVA_HOME /msu/scratch2/m1gsa00/jdk1.7.0
+export CLASSPATH ${CLASSPATH}:${ANT_HOME}/lib/ant.jar
+set path = (\
+$ANT_HOME/bin\
+$path) 
+set path = (\
+$JAVA_HOME/bin\
+$path) 
+
+#$HOME/dynare/testing/maven-2.0/bin\
+
+
+#for groovy 
+export GROOVY_HOME $MYSCRTCH/groovy-1.0
+export CLASSPATH ${CLASSPATH}:${GROOVY_HOME}/groovy-1.0.jar:
+set path = (\
+$GROOVY_HOME/bin \
+$path) 
+
+
+#for fame timeiq
+#export LD_LIBRARY_PATH  ${LD_LIBRARY_PATH}:/opt/fame/timeiq/lib/linux_x86/
+export LD_LIBRARY_PATH  /opt/fame/timeiq/lib/linux_x86/64
+
+#old $MYSCRTCH/maven-2.0.7/bin \
+export M2_HOME /msu/scratch/m1gsa00/apache-maven-2.2.1
+#for maven
+set path = (\
+$M2_HOME/bin \
+$path) 
+export M2_REPO $MYSCRTCH/tryRep
+#for maven 3.0.3
+export M2_HOME /msu/scratch/m1gsa00/apache-maven-3.0.3
+export M2 $M2_HOME/bin
+set path = (\
+$M2_HOME/bin \
+$path) 
+export M2_REPO $MYSCRTCH/tryRep
+
+
+#for svn
+export LC_ALL en_US
+export SVN_BASEURL file:///msu/home/m1gsa00/scratch/mySvn/
+#for gcc
+export CC gcc
+set path = (/opt/gcc/4.6.1/bin $path)
+export LD_LIBRARY_PATH /opt/gcc/4.6.1/lib64:${LD_LIBRARY_PATH}
+#for tomcat
+export CATALINA_HOME $MYSCRTCH/apache-tomcat-6.0.10
+set path = (\
+$CATALINA_HOME/bin \
+$path) 
+
+export AXIS2_HOME $MYSCRTCH/axis2-1.3-RC2
+set path = (\
+$AXIS2_HOME/bin\
+$path) 
+
+export PARVUS_HOME $MYSCRTCH/parvus
+
+#for nuweb literate programming
+set path = (\
+$RES2/bin/nuweb-1.0b1\
+$path) 
+
+
+#for my programs
+set path = (\
+$RES2/bin \
+$path) 
+
+
+
+
+
+#for dynare
+#export GS_LIB /opt/matlab-7.0/sys/ghostscript/ps_files
+export GS_LIB 
+set path = (\
+#/opt/matlab-7.0/sys/ghostscript/bin/glnx86 \
+$RES2/dynare++-1.2.1 \
+#$HOME/dynare++-1.1 \
+$path) 
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/msu/home/m1gsa00/dynare_v4/matlab/
+export LDPATH_PREFIX /usr/lib:/lib/tls:/lib:
+#export LD_LIBRARY_PATH /opt/gcc/4.6.1/lib/gcc/x86_64-unknown-linux-gnu/4.6.1:/opt/MATLAB/R2011a/bin/glnxa64:${LD_LIBRARY_PATH}:
+
+
+
+
+#for jlapack java lapack interface
+#export CLASSPATH ${CLASSPATH}:$RES2/jlapack-0.3a/classes.zip
+
+#for junit java unit testing 
+export CLASSPATH ${CLASSPATH}:$HOME/junit3.8.1/junit.jar
+
+#for junitperf
+#export CLASSPATH ${CLASSPATH}:$RES2/dynareTesting/lib/junitperf-1.9.1.jar
+
+#for ejb
+#export CLASSPATH ${CLASSPATH}:$RES2/dynareTesting/java/ejb-3_0-api.jar
+
+#for jms
+#export CLASSPATH ${CLASSPATH}:$RES2/dynareTesting/java/jms1.0.2b/lib/jms.jar
+
+#for xerces xml
+export CLASSPATH ${CLASSPATH}:/msu/home/m1gsa00/RES2/xerces-2_9_1/xml-apis.jar:/msu/home/m1gsa00/RES2/xerces-2_9_1/xercesSamples.jar:/msu/home/m1gsa00/RES2/xerces-2_9_1/xercesImpl.jar
+
+#for xalan xml
+export CLASSPATH ${CLASSPATH}:/msu/home/m1gsa00/RES2/xalan-j_2_7_1/xalan.jar
+export CLASSPATH ${CLASSPATH}:/msu/home/m1gsa00/RES2/xalan-j_2_7_1/serializer.jar
+export CLASSPATH ${CLASSPATH}:/msu/home/m1gsa00/RES2/xalan-j_2_7_1/xercesImpl.jar
+
+#for sax
+#export CLASSPATH ${CLASSPATH}:/msu/home/m1gsa00/RES2/sax2r3/sax2.jar
+
+
+
+#for diffxml patchxml
+set path = (\
+$RES2/diffxml \
+$path) 
+
+
+
+#for texml
+set path = (\
+$MYSCRTCH/texml-2.0.0/scripts \
+$path) 
+
+
+
+#for pellet
+#export CLASSPATH ${CLASSPATH}:$HOME/pellet-1.3-beta/lib/pellet.jar
+
+
+
+#for tex
+
+export PERL5LIB ::"/msu/home/m1gsa00/fromDesktop/User Data/Git/lib/perl5/site_perl/5.8.8/msys/":"/msu/home/m1gsa00/fromDesktop/User Data/Git/lib/perl5/site_perl/5.8.8/msys/auto/SVN"
+
+
+#export POFFICE $HOME/paperlessOffice/papers/pdfEtc/
+export TEXFONTS :$THOME/arabtex/texinput
+export TEXFONTS ${TEXFONTS}:$RES2/cjk-current/texinput/GB
+export MFINPUTS :$THOME/arabtex/mfinput
+export MFINPUTS ${MFINPUTS}:$THOME/arabtex/tfm:$RES2/cjk-current/texinput/GB/arphic/tfm
+export MFINPUTS ${MFINPUTS}:$RES2/musixtex
+
+export POFFICE $RES2/pdfEtc/
+export TEXINPUTS .
+
+export TEXINPUTS ${TEXINPUTS}:$HOME/RES2/arabic/
+export TEXINPUTS ${TEXINPUTS}:$HOME/RES2/chinese/:$RES2/cjk-current/texinput/GB
+export TEXINPUTS ${TEXINPUTS}:$HOME/RES2/cjk-current/texinput
+export TEXINPUTS ${TEXINPUTS}:$HOME/RES2/cjk-current/texinput/Bg5
+export TEXINPUTS ${TEXINPUTS}:$THOME/arabtex/texinput
+export TEXINPUTS ${TEXINPUTS}:$HOME/RES2/cjk-current/texinput/mule
+export TEXINPUTS ${TEXINPUTS}:$HOME/RES2/cjk-current/texinput/KS/HLaTeX
+export TEXINPUTS ${TEXINPUTS}:$THOME/seminar/inputs
+export TEXINPUTS ${TEXINPUTS}:$THOME/texStyles
+export TEXINPUTS ${TEXINPUTS}:$THOME/texBibs
+export TEXINPUTS ${TEXINPUTS}:$THOME/texmf/tex/latex/texpower-0-2:
+export TEXINPUTS ${TEXINPUTS}:$THOME/texmf/tex/latex/ifmslide:
+export TEXINPUTS ${TEXINPUTS}:$THOME/texmf/tex/latex/texpower/tpslifonts:
+export TEXINPUTS $HOME/numericalMethodsPortal/docs/ctan/hyperref:${TEXINPUTS}
+export TEXINPUTS $HOME/numericalMethodsPortal/docs/ctan/graphics/graphics:${TEXINPUTS}
+export TEXINPUTS $THOME/texStyles/:${TEXINPUTS}
+export TEXINPUTS ${TEXINPUTS}:$RES2/musixtex
+export TEXINPUTS ${TEXINPUTS}:$RES2/musixps-unix/pfb
+export TEXINPUTS ${TEXINPUTS}:$RES2/musiXTeX/tex
+export TEXINPUTS ${TEXINPUTS}:$RES2/musiXTeX/doc/musixtex:$HOME/RES2/teaching/Howard/
+export TEXINPUTS ${TEXINPUTS}:$RES2/musiXTeX/doc/musixtex:/msu/res2/m1gsa00/dirDevConvergence/convergence/src/mathematica/continuous/kluwer
+
+
+#export BIBINPUTS .:$THOME/texBibs/:
+#export BIBINPUTS .:${POFFICE}:$THOME/texBibs
+export BIBINPUTS ::.:${POFFICE}:$THOME/texBibs:$HOME/RES2/teaching/Howard/
+export BSTINPUTS .:$THOME/texBibs/:$HOME/RES2/teaching/Howard/:$BIBINPUTS
+
+#musiXTeX
+set path = (\
+$RES2/musiXTeX/system/musixflx/c-source\
+$path) 
+
+
+#for latex2rtf
+export RTFPATH /msu/scratch/m1gsa00/planning/latex2rtf/latex2rtf-2.1.0/cfg
+set path = (\
+/msu/scratch/m1gsa00/planning/latex2rtf/latex2rtf-2.1.0 \
+$path) 
+
+
+
+
+#for postgres
+export PGHOST sqllx1
+
+#for mlton
+set path = (\
+$RES2/mlton/usr/bin\
+$path) 
+
+#for fame
+#set path = (\
+#/opt/fame/fame90/hli \
+#$path) 
+#set path = (\
+#/msu/scratch/m1gsa00/collectMaven/treeTop/oProductivity/fameToXml/target/nar/lib/i386-Linux-g++/shared/ \
+#$path) 
+
+
+#export LD_LIBRARY_PATH /opt/fame/fame90/hli:/msu/scratch/m1gsa00/collectMaven/treeTop/oProductivity/fameToXml/target/nar/lib/i386-Linux-g++/jni/:${LD_LIBRARY_PATH}
+
+
+#RES2
+#drwxrwxr-x   5 m1gsa00  msu          512 May 19  2003 sml
+#drwxr-xr-x   6 m1gsa00  msu          512 May 19  2003 jakarta-ant-1.5
+#drwxrwxr-x   5 m1gsa00  msu          512 May 19  2003 solarisGraphviz
+#drwxrwxr-x   3 m1gsa00  msu          512 May 19  2003 lib
+#drwxrwxr-x   3 m1gsa00  msu          512 May 19  2003 texFiles
+#drwxr-xr-x  62 m1gsa00  msu         1536 May 19  2003 aim
+#drwxrwxr-x   4 m1gsa00  msu          512 May 19  2003 docs
+#drwxrwxr-x  10 m1gsa00  mq           512 May 31  2003 windowsDirs
+#drwxrwxr-x   3 m1gsa00  msu          512 Jul  5  2003 convergenceDistDir
+#drwxrwxr-x   3 m1gsa00  msu          512 Jul  5  2003 dirDevConvergence
+#drwxrwxrwx  78 40572    msu        12288 Jul 25  2003 m1drr00
+#drwxrwxr-x   3 m1gsa00  msu          512 Sep  2  2003 matlabMexFiles
+#drwxrwxr-x   3 m1gsa00  msu          512 Sep 15  2003 whyFast
+#drwxrwxr-x   5 m1gsa00  msu          512 Mar  8  2004 jarFiles
+#-rw-rw-r--   1 m1gsa00  msu         1368 Mar  8  2004 devDirconvergence
+#-rw-rw-r--   1 m1gsa00  msu         1353 Mar  8  2004 #devDirconvergence#
+#drwxrwxr-x   9 m1gsa00  msu         2048 Mar  8  2004 bin
+#drwxrwxr-x  34 m1gsa00  msu         1024 Jul  1 23:37 cvsroot
+#drwxrwxr-x   6 m1gsa00  msu          512 Nov 30 17:19 apache-ant-1.6.2
+#
+
+
+#PROJ3
+#drwxrwxr-x   3 m1gsa00  msu          512 May 31  2003 garyFiles
+#drwxrwxr-x  23 m1gsa00  msu          512 May 31  2003 dataHome
+#
+
+
+
+#PROJ5
+#drwxr-xr-x  22 m1gsa00  mq          1024 Aug 20  2001 helenWongFiles
+
+
+
+
+
+
+
+
+
+
+
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/usr/lib/qt-2.3.1/lib/::
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/usr/lib/qt-2.3.1/lib/::/msu/res2/m1gsa00/homotopyHybrid/target/nar/lib/i386-Linux-g++/shared
+
+#edit .xplaces for programs starting at login
+export MYBIN $RES2/bin/linux
+
+#for rjava
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/opt/jdk/jre/lib/amd64/server/						
+export R_LIBS /msu/res2/m1gsa00/R/Library:/Library/Frameworks/R.framework/Resources/library
+
+#for jlink mathematic java link
+#export JLinkJarLoc /opt/mathematica-5.2/AddOns/JLink/JLink.jar
+#export JLinkJarLoc /opt/mathematica-6.0.1/SystemFiles/Links/JLink/JLink.jar
+export JLinkJarLoc /opt/mathematica/SystemFiles/Links/JLink/JLink.jar
+#export JLinkLibLoc /opt/mathematica-5.2/AddOns/JLink/SystemFiles/Libraries/Linux
+#export JLinkLibLoc /opt/mathematica-6.0.1/SystemFiles/Links/JLink/SystemFiles/Libraries/Linux
+#export JLinkLibLoc /opt/mathematica-7.0.1/SystemFiles/Links/JLink/SystemFiles/Libraries/Linux
+export JLinkLibLoc /opt/mathematica8/SystemFiles/Links/JLink/SystemFiles/Libraries/Linux
+#for jlink
+#export CLASSPATH ${CLASSPATH}:/opt/mathematica-7.0.1/SystemFiles/Links/JLink/JLink.jar
+export CLASSPATH ${CLASSPATH}:/opt/mathematica8/SystemFiles/Links/JLink/JLink.jar
+
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/opt/mathematica8/SystemFiles/Links/JLink/SystemFiles/Libraries/Linux-x86-64
+
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:${JLinkLibLoc}
+export KMP_DUPLICATE_LIB_OK TRUE
+
+
+#for jmatlink matlab java link
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/opt/matlab-7.0/sys/os/glnx86:/opt/matlab-7.0/bin/glnx86/:/msu/res2/m1gsa00/dynareTesting/junitExamples/lib
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$HOME/dynare/forJmatlink
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$RES2/jmatlink/jmatlink:/opt/matlab-7.0/sys/os/glnx86:/opt/matlab-7.0/bin/glnx86/
+#export CLASSPATH ${CLASSPATH}:$HOME/dynare/forJmatlink/jmatlink.jar
+#export CLASSPATH ${CLASSPATH}:$RES2/jmatlink/jmatlink.jar
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$HOME/scratch/jmatlink2011
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/opt/MATLAB/R2011a/bin/glnxa64:/opt/MATLAB/R2011a/sys/os/glnxa64:/opt/MATLAB/R2011a/extern/lib/glnxa64
+#export CLASSPATH ${CLASSPATH}:$HOME/scratch/jmatlink2011/jmatlink.jar
+set path = (\
+#/opt/matlab/bin \
+/opt/MATLAB/R2012a/bin \
+$path)
+#set path = (\
+#/msu/scratch/m1gsa00/jmatlink2011 \
+#$path)
+
+
+#for nuweb literate programming
+set path = (\
+$RES2/bin/linux\
+$path) 
+export TEXINPUTS ${TEXINPUTS}:/msu/home/m1gsa00/nuwebsrc
+
+#for glassfish
+set path = (\
+$MYSCRTCH/glassfish/bin/ \
+$path) 
+
+
+#for matlab
+#export LD_ASSUME_KERNEL 2.4.1
+#export LD_LIBRARY_PATH /opt/matlab-7.0/bin/glnx86/:${LD_LIBRARY_PATH}
+#export LD_LIBRARY_PATH /usr/lib/gcc-lib/i386-redhat-linux/3.2.3/:${LD_LIBRARY_PATH}
+#export CLASSPATH ${CLASSPATH}:/opt/matlab-7.0/java/jar/jmi.jar
+
+
+
+#for javacc
+#export JAVACC_HOME  /opt/javacc-3.2/
+#export CLASSPATH ${CLASSPATH}:/opt/javacc-3.2/bin/lib/javacc.jar
+export sAimPath /msu/scratch/m1gsa00/mavenSparseAMAGateway
+export JETTY_HOME /msu/scratch/m1gsa00/jetty-6.1.5
+#for mpiJava
+#set path = (\
+#$HOME/mpiJava/src/scripts \
+#$path) 
+#export CLASSPATH ${CLASSPATH}:$HOME/mpiJava/lib/classes
+#export LD_LIBRARY_PATH $HOME/mpiJava/lib:${LD_LIBRARY_PATH}
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:${sAimPath}/target/lib:/usr/lib/gcc-lib/i386-redhat-linux/3.2.3/:/opt/matlab-7.0/bin/glnx86:/usr/lib/gcc/i386-redhat-linux/3.4.6 
+#for runMma
+export CLASSPATH ${CLASSPATH}:/msu/res2/m1gsa00/dirDevConvergence/convergence/src/xml/classes/
+
+###
+
+#for nag runtime
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/opt/NAG/fll6a21dfl/lib
+
+#for MATLAB MATHLINK
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/opt/mathematica-7.0.1/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64/CompilerAdditions/ 
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/opt/mathematica8/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64/CompilerAdditions/ 
+
+
+#for timeiq fame
+export timeiqdir /opt/fame/timeiq
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/opt/fame/timeiq/lib/linux_x86/64/libjchli.so
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/opt/fame/timeiq/lib/linux_x86/64
+#export CLASSPATH ${CLASSPATH}:${timeiqdir}/lib/timeiq.jar:${timeiqdir}/lib/TimeIQLicense.jar:.:/opt/fame/timeiq/tools/lib/TimeIQCharts.jar:/opt/fame/timeiq/tools/lib/JimiProClasses.zip
+#export timeiqdir /opt/fame/timeiq20
+export CLASSPATH ${CLASSPATH}:${timeiqdir}/lib/timeiq.jar:${timeiqdir}/lib/TimeIQLicense.jar:.:/opt/fame/timeiq/tools/lib/TimeIQCharts.jar:/opt/fame/timeiq/tools/lib/JimiProClasses.zip
+
+# for fit
+export CLASSPATH ${CLASSPATH}:/msu/res2/Shared_Projects/MPSCode/fit/fit.jar
+
+#for matlabcontrol4
+export CLASSPATH ${CLASSPATH}:/msu/res2/Shared_Projects/MPSCode/matlabcontrol4/matlabcontrol-4.0.0_demo.jar:/msu/res2/Shared_Projects/MPSCode/matlabcontrol4/matlabcontrol-4.0.0.jar
+
+
+#for tex
+#export MATHDIR /opt/mathematica-7.0.1
+export MATHDIR /opt/mathematica8
+export TEXINPUTS ${TEXINPUTS}:${MATHDIR}/SystemFiles/IncludeFiles/TeX
+
+#for m3d
+export MPINPUTS $HOME/RES2/m3d/mpinputs
+
+
+
+#for graphviz
+export GRAPHVIZBIN /opt/graphviz-1.12/bin 
+#set path = (\
+#$GRAPHVIZBIN  \
+#$path ) 
+
+
+
+#for IMSL
+#export CTT_DIR "/opt/imsl-ctt-6.0/CTT6.0"
+#source $CTT_DIR/ctt/bin/cttsetup.csh
+
+
+
+#for jlapack
+#export CLASSPATH ${CLASSPATH}:$HOME/jlapack-0.3a/classes.zip
+
+
+
+#for smlnj
+set path = (\
+$RES2/sml/smlnjForLinux/bin \
+$path) 
+
+
+#for mlj
+export MLJBIN $RES2/sml/mljLinux/mlj/bin
+#set path = (\
+#$MLJBIN \
+#$path) 
+
+
+
+#for other arc including python
+#set path = (\
+#/opt/bin \
+#$path) 
+
+export PYTHONPATH /opt/python/lib/python2.7/site-packages
+
+#for allard bks programs
+set path = (\
+$path \
+$BKS/bin \
+) 
+
+#for autoconf
+#set path = (\
+#/msu/scratch/m1gsa00/autoconfig/bin \
+#$path \
+#) 
+#for automake
+#set path = (\
+#/msu/scratch/m1gsa00/automake/bin \
+#$path \
+#) 
+
+#for automake
+#set path = (\
+#/msu/scratch/m1gsa00/ftj/bin \
+#$path \
+#) 
+
+#for 7za for lzma
+set path = (\
+/msu/res2/m1gsa00/forDesktopGcc/p7zip_9.04/bin\
+$path \
+) 
+
+
+
+export BOOTCLASSPATH /opt/jdk1.5.0/jre/lib/rt.jar
+export CM_PATH $RES2/sml/smlnjForLinux/lib
+export NJBIN $RES2/sml/smlnjForLinux/bin/sml
+export MLJJVM "java -classpath"
+
+
+alias mth /opt/mathematica-7.0.1/bin/math
+alias mthnb /opt/mathematica-7.0.1/bin/mathematica
+
+#
+#put math 8 bin dir at head of paht
+set path = (\
+/opt/mathematica8/bin \
+$path \
+)
+
+
+
+#put my swish
+set path = (\
+/msu/res2/m1gsa00/proj3/garyFiles/big/swish/mySwish/build/bin \
+$path \
+)
+#MaMa executablesl
+set path = (\
+/msu/res2/m1gsa00/MaMa/mathematica_for_matlab \
+$path \
+)
+
+#/opt/mathematica-7.0.1/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64/CompilerAdditions \
+
+#MATHLINK	mprep
+set path = (\
+/opt/mathematica8/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64/CompilerAdditions \
+$path \
+)
+
+export CULA_ROOT "/msu/res2/Shared_Projects/ARCHPC/cula"
+export CULA_INC_PATH "$CULA_ROOT/include"
+export CULA_BIN_PATH_32 "$CULA_ROOT/bin"
+export CULA_BIN_PATH_64 "$CULA_ROOT/bin64"
+export CULA_LIB_PATH_32 "$CULA_ROOT/lib"
+export CULA_LIB_PATH_64 "$CULA_ROOT/lib64"
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$CULA_LIB_PATH_64
+
+
+#set path = (\
+#/msu/res2/Shared_Projects/ARCHPC/mathematica/CUDA/cuda/bin \
+#$path \
+#)
+set path = (\
+/gpu/cuda/bin/ \
+$path \
+)
+
+
+
+
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/msu/res2/Shared_Projects/ARCHPC/math#ematica/CUDA/cuda/lib64:/msu/res2/Shared_Projects/ARCHPC/mathematica/CUDA/cuda/lib
+
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/msu/scratch2/m1gsa00/TestU01-1.2.3/usr/lib
+export LIBRARY_PATH /msu/scratch2/m1gsa00/TestU01-1.2.3/usr/lib
+export C_INCLUDE_PATH /msu/scratch2/m1gsa00/TestU01-1.2.3/usr/include
+
+
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/msu/res2/Shared_Projects/ARCHPC/forCheck/lib
+
+
+
+#export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/msu/res2/Shared_Projects/ARCHPC/cudarng/hostAPI/usr/lib64/nvidia/
+
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/msu/scratch2/m1gsa00/usr/lib
+
+
+
+set path = (\
+/msu/scratch2/m1gsa00/usr/bin  \
+/msu/res1/Software/bin \
+$path \
+)
+
+
+
+
+export http_proxy bender.rsma.frb.gov
+export https_proxy bender.rsma.frb.gov
+export HTTP_PROXY bender.rsma.frb.gov
+export HTTPS_PROXY bender.rsma.frb.gov
+
+#for eclipse
+set path = (\
+/msu/scratch2/m1gsa00/eclipse\
+$path) 
+#for argoeclipse
+export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/usr/../usr/lib
+
+export LD_LIBRARY_PATH /msu/res2/Shared_Projects/MPSCode/timeIQForTesting/fUnit:${LD_LIBRARY_PATH}
+
+
+#export FLIBS  "-L/msu/scratch2/m1gsa00/TestU01-1.2.3/usr/lib -L/opt/gcc/4.6.1/lib/gcc/x86_64-unknown-linux-gnu/4.6.1 -L/opt/gcc/4.6.1/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -lgfortranbegin -lgfortran -lm"
+export FLIBS  " -L/usr/lib64  -lgfortran"
+
+
+
+export TEXINPUTS ${TEXINPUTS}:/msu/scratch/m1gsa00/learnProjection/proto/authoritative/MathPSfrag-2.0-rev55/latex/xmpl-ps4pdf/
