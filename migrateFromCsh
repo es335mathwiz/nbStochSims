@@ -262,7 +262,7 @@ export TEXINPUTS ${TEXINPUTS}:$RES2/musiXTeX/tex
 export TEXINPUTS ${TEXINPUTS}:$RES2/musiXTeX/doc/musixtex:$HOME/RES2/teaching/Howard/
 export TEXINPUTS ${TEXINPUTS}:$RES2/musiXTeX/doc/musixtex:/msu/res2/m1gsa00/dirDevConvergence/convergence/src/mathematica/continuous/kluwer
 
-
+export BIBINPUTS=.
 #export BIBINPUTS .:$THOME/texBibs/:
 #export BIBINPUTS .:${POFFICE}:$THOME/texBibs
 export BIBINPUTS ::.:${POFFICE}:$THOME/texBibs:$HOME/RES2/teaching/Howard/

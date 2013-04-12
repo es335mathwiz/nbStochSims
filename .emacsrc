@@ -1,0 +1,168 @@
+(setq TeX-auto-untabify nil)
+(setq auto-raise-screen ())
+(setq load-path (cons "~m1gsa00/emacsEls/" load-path))
+;(load-auctex)
+;(setq LaTeX-version "2e")   ;  Tell AUC TeX we're using latex2e.
+(setq auto-mode-alist (cons '("\\.e$" . eiffel-mode) auto-mode-alist))
+   (setq load-path (cons "~m1gsa00/consolidateHome/xml/sxml-mode/" load-path))
+
+   (autoload 'sxml-mode "sxml-mode" "Major mode for editing XML documents." t)
+
+   ;; Invokes automatically the XML mode with the .xml extension
+   (setq auto-mode-alist
+         (cons '("\\.xml$" . sxml-mode) auto-mode-alist))
+
+
+;
+;(load "rcs.el")
+(setq auto-mode-alist
+      (append  
+		'(
+		("\\.xml$" . sgml-mode)
+		("\\.xsd$" . sgml-mode)
+		("\\.xsl$" . sgml-mode)
+;        ("\\.xml$" . sxml-mode)
+;        ("\\.xsd$" . sxml-mode)
+;        ("\\.xsl$" . sxml-mode)
+		("\\.e$" . eiffel-mode)
+       ("\\.mtex$" . TeX-mode)
+		("\\.w$" . TeX-mode)
+;		("\\.tex$" . TeX-mode)
+		)
+      auto-mode-alist))
+;
+;
+;("\\.s$" . TeX-mode)
+;("\\.sty$" . TeX-mode)
+;("\\.web$" . TeX-mode)
+;("\\.bib$" . bibtex-mode)
+
+     (autoload 'eiffel-mode "eiffel3" "Mode for Eiffel programs" t)
+(autoload 'math "math" "Starts Mathematica" t)
+(autoload 'math-mode "math"
+   "Mode for editing Mathematica.  Loading will result in more info." t)
+
+
+(setq auto-mode-alist (cons '("\.math$" . math-mode) auto-mode-alist))
+
+
+(put 'eval-expression 'disabled nil)
+
+;(setq target-buffer (get-buffer "*scratch*"))
+
+
+;; because I have so many screens open all the time, and idle C-xC-c can
+;; really screw things up for me.  So make sure we dont exit without
+;; confirmation, and rebind C-xC-c appropriately
+
+(defun my-exit-from-emacs ()
+  (interactive)
+  (if (yes-or-no-p "Do you want to exit ")
+      (save-buffers-kill-emacs)))
+
+(global-set-key "\C-x\C-c" 'my-exit-from-emacs)
+(global-set-key "\C-x\C-n" 'search-forward)
+(autoload 'find-doc "find-doc" nil t)
+(global-set-key "d" 'find-doc)
+
+
+
+(put 'narrow-to-region 'disabled nil)
+
+
+
+(load "~/emacsEls/letter-initialization.el")
+(load "~/emacsEls/gary1.el")
+;; ; Define C-c C-t to run my favorite command in shell mode:
+
+;;       '((lambda () 
+;;           (define-key cmushell-mode-map "\C-c\C-t" 'favorite-cmd))))
+
+;
+
+
+(setq TeX-parse-self t) ; Enable parse on load for auctex
+(setq TeX-view-style '(("." "xdvi %d"))) ;   Use xdvi as viewer
+(setq TeX-auto-save t) ; Enable parse on save for auctex
+(setq outline-minor-mode-prefix "\C-c\C-o")  ; remove outline key conflict
+;;; Use evince instead of acroread
+(eval-after-load "tex" 
+  '(add-to-list 'TeX-output-view-style '("^pdf$" "." "evince %o")))
+;;   The next two do very nice things when on a color terminal.
+;;   
+;;(if window-system (require 'hl319))    ; beta of new hilit19
+;;(load "hlfly")                         ; allows to hilit on fly
+(setq hilit-mode-enable-list  '(not text-mode));don't highlight text mode buffs
+;;(if window-system (require 'stig-paren))  ; Matches parens nicely
+  (setq x-pointer-shape 68)                ; mouse shape 68 == NorthWest arrow
+  (if window-system
+  (progn
+  (if (x-display-color-p)
+     (progn                               ;  Color Display
+        (setq x-cursor-fore-pixel "white")
+        (set-cursor-color "purple")
+        (set-mouse-color "red")
+        (set-face-background 'region    "pink")
+        (set-face-foreground 'region    "black")
+        (set-face-background 'highlight "green")
+        (set-face-foreground 'highlight "black")
+        )
+    (set-face-underline-p 'region t)       ;  Mono. Boring. Underline Region
+    )
+  )) ;  End of  if window-system
+ 
+ 
+ (require 'shell)
+ (define-key shell-mode-map "\es"
+     'comint-previous-matching-input-from-input)
+ (setq-default tab-width 4)   ; set tab width to 4 for all buffers
+
+
+(defun garyFun ()
+(local-set-key "\C-cf" 'frb-letter)
+(local-set-key "\C-cg" 'frb-memo)
+(local-set-key "\C-cd" 'CEMAR-letter)
+(local-set-key "\C-cC" 'CEMAR-memo)
+(local-set-key "\C-cn" 'make-note)
+(local-set-key "\C-cw" 'CEMAR-fax-cover)
+(local-set-key "\C-ch" 'frb-fax-cover)
+)
+
+(add-hook 'LaTeX-mode-hook 'garyFun)
+
+(load "frb-ripem")
+
+
+
+
+
+; toggle shell escape using C-c C-t C-x
+
+(defun TeX-toggle-escape nil (interactive)
+
+"Toggle Shell Escape"
+
+(setq LaTeX-command
+
+  (if (string= LaTeX-command "latex") "latex -shell-escape"
+
+    "latex"))
+
+(message (concat "shell escape "
+
+         (if (string= LaTeX-command "latex -shell-escape")
+
+         "enabled"
+
+           "disabled"))
+
+     ))
+
+(add-hook 'LaTeX-mode-hook
+
+      (lambda nil
+
+    (local-set-key (kbd "C-c C-t C-x") 'TeX-toggle-escape)))
+
+ 
+
