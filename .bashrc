@@ -61,10 +61,13 @@ export TEXINPUTS=$THOME/texStyles/:$TEXINPUTS
 export TEXINPUTS=$TEXINPUTS:$THOME/texBibs
 export BIBINPUTS=.
 export BIBINPUTS=::$HOME/RES2/pdfEtc
+export CLASSPATH=""
 
 #mathematica
+#export MATHDIR=/opt/mathematica9
+#export PATH=$MATHDIR:$PATH
 export MATHDIR=/opt/mathematica8
-PATH=$MATHDIR/bin:$PATH
+export PATH=$MATHDIR/bin:$PATH
 export JLinkLibLoc=$MATHDIR/SystemFiles/Links/JLink/SystemFiles/Libraries/Linux
 export CLASSPATH=$CLASSPATH:$MATHDIR/SystemFiles/Links/JLink/JLink.jar
 export TEXINPUTS=$TEXINPUTS:$MATHDIR/SystemFiles/IncludeFiles/TeX
@@ -73,5 +76,58 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MATHDIR/SystemFiles/Links/JLink/SystemF
 
 
 #cuda
-PATH=$PATH:/gpu/cuda/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/mathematica8/SystemFiles/Links/CUDALink/LibraryResources/Linux-x86-64/
+#PATH=$PATH:/gpu/cuda/bin
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/mathematica9/SystemFiles/Links/CUDALink/LibraryResources/Linux-x86-64/
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/gpu/cuda/lib
+#export CUDA_LIBRARY_PATH=/gpu/cuda/lib/libcudart.so
+
+
+#for fame timeiq
+export timeiqdir=/opt/fame/timeiq32
+#export timeiqdir=/opt/fame/timeiq
+export licensedir=/opt/fame/timeiq
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$licensedir/lib/linux_x86/64:$timeiqdir/lib/linux_x86/64
+export CLASSPATH=$CLASSPATH:$licensedir:$timeiqdir/lib/timeiq.jar:$timeiqdir/lib/TimeIQLicense.jar:.
+#for charts
+export CLASSPATH=$CLASSPATH:$timeiqdir/tools/lib/TimeIQCharts.jar:$timeiqdir/tools/lib/JimiProClasses.zip
+
+
+#matlab
+export mlDir=/opt/MATLAB/R2013a
+export PATH=$mlDir/bin:$PATH
+
+
+#for java
+export PATH=/msu/res1/Software/java/jdk1.7.0_21/bin/:$PATH
+
+
+
+#for maven
+export M2_REPO=$MYSCRTCH/tryRep
+#for maven 3.0.3
+export M2_HOME=/msu/res1/Software/maven3.0.5/apache-maven-3.0.5
+export M2=$M2_HOME/bin
+export PATH=$M2_HOME/bin:$PATH
+export JAVA_HOME=/msu/res1/Software/java/jdk1.7.0_21/
+#for affineArithmetic
+export PLATFORM=intel-Linux
+
+
+
+
+#for rootbeer
+export CLASSPATH=$CLASSPATH:/msu/res1/Software/functional/Rootbeer-1.0.48-alpha.jar
+
+
+
+#for eclipse
+#export PATH=/msu/scratch2/m1gsa00/eclipse:$PATH
+export PATH=/msu/res1/Software/eclipse/eclipse:$PATH
+
+
+#for antlr
+export CLASSPATH=".:/msu/res1/Software/antlr/antlr-4.0-complete.jar:$CLASSPATH"
+alias antlr4='java -jar /msu/res1/Software/antlr/antlr-4.0-complete.jar'
+alias grun='java org.antlr.v4.runtime.misc.TestRig'
+
+

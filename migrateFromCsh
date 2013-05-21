@@ -632,9 +632,12 @@ export LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:/usr/../usr/lib
 export LD_LIBRARY_PATH /msu/res2/Shared_Projects/MPSCode/timeIQForTesting/fUnit:${LD_LIBRARY_PATH}
 
 
-#export FLIBS  "-L/msu/scratch2/m1gsa00/TestU01-1.2.3/usr/lib -L/opt/gcc/4.6.1/lib/gcc/x86_64-unknown-linux-gnu/4.6.1 -L/opt/gcc/4.6.1/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -lgfortranbegin -lgfortran -lm"
+#export FLIBS  "-L/msu/scratch2/m1gsa00/TestU01-1.2.3/usr/lib -L/opt/gcc/4.6.1/lib/gcc/x86x_64-unknown-linux-gnu/4.6.1 -L/opt/gcc/4.6.1/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -lgfortranbegin -lgfortran -lm"
 export FLIBS  " -L/usr/lib64  -lgfortran"
 
 
 
 export TEXINPUTS ${TEXINPUTS}:/msu/scratch/m1gsa00/learnProjection/proto/authoritative/MathPSfrag-2.0-rev55/latex/xmpl-ps4pdf/
+
+
+CUDAInformation::nobindir: CUDA Toolkit bin directory does not exist. >>yes 
