@@ -83,15 +83,18 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MATHDIR/SystemFiles/Links/JLink/SystemF
 
 
 #for fame timeiq
-export timeiqdir=/opt/fame/timeiq32
+export timeiqdir=/opt/fame/timeiq
 #export timeiqdir=/opt/fame/timeiq
 export licensedir=/opt/fame/timeiq
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$licensedir/lib/linux_x86/64:$timeiqdir/lib/linux_x86/64
+
+
+
 export CLASSPATH=$CLASSPATH:$licensedir:$timeiqdir/lib/timeiq.jar:$timeiqdir/lib/TimeIQLicense.jar:.
 #for charts
 export CLASSPATH=$CLASSPATH:$timeiqdir/tools/lib/TimeIQCharts.jar:$timeiqdir/tools/lib/JimiProClasses.zip
 
 
+export CLASSPATH=$timeiqdir/lib/timeiq.jar:$timeiqdir/lib/TimeIQLicense.jar:.
 #matlab
 export mlDir=/opt/MATLAB/R2013a
 export PATH=$mlDir/bin:$PATH
@@ -122,7 +125,7 @@ export CLASSPATH=$CLASSPATH:/msu/res1/Software/functional/Rootbeer-1.0.48-alpha.
 
 #for eclipse
 #export PATH=/msu/scratch2/m1gsa00/eclipse:$PATH
-export PATH=/msu/res1/Software/eclipse/eclipse:$PATH
+export PATH=$HOME/RES2/eclipse/eclipse:$PATH
 
 
 #for antlr
@@ -130,4 +133,12 @@ export CLASSPATH=".:/msu/res1/Software/antlr/antlr-4.0-complete.jar:$CLASSPATH"
 alias antlr4='java -jar /msu/res1/Software/antlr/antlr-4.0-complete.jar'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
 
+
+export LD_LIBRARY_PATH=/opt/fame/timeiq/lib/linux_x86/64
+
+#extra fame
+#provide paths for timeiq and timeiqCharts
+export timeiqdir=/opt/fame/timeiq
+export timeiqChartsDir=/opt/fame/timeiq/timeiqcharts/tools
+export CLASSPATH=$timeiqChartsDir/lib/TimeIQCharts.jar:$timeiqChartsDir/lib/JimiProClasses.zip:$timeiqdir/lib/timeiq.jar:$timeiqdir/lib/TimeIQLicense.jar:.:$timeiqChartsDir:$timeiqdir/lib/commons-codec-1.3.jar
 
