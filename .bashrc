@@ -13,7 +13,7 @@ export GIT_EDITOR=emacs
 export RES2=/msu/res2/m1gsa00
 export PROJ3=/msu/res2/m1gsa00/proj3
 export PROJ5=/msu/res2/m1gsa00/proj5
-export MYSCRTCH=/msu/scratch/m1gsa00
+export MYREPOS=/msu/res1/Software/mavenRepositories
 export DHOME=$PROJ3/dataHome
 export THOME=$DHOME/texFiles
 
@@ -28,7 +28,7 @@ export RES2=/msu/res2/m1gsa00
 
 
 #add utility dir to path
-PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 
 #directory with swish indexes and examples
@@ -52,7 +52,7 @@ export carlDir=mergeConflictDir/carl/carlSharedDevProject
 
 
 #add git flow to path
-PATH=/add/lib/gitflow:$PATH
+export PATH=/add/lib/gitflow:$PATH
 
 
 #tex dirs
@@ -106,7 +106,7 @@ export PATH=/msu/res1/Software/java/jdk1.7.0_21/bin/:$PATH
 
 
 #for maven
-export M2_REPO=$MYSCRTCH/tryRep
+export M2_REPO=$MYREPOS/tryRep
 #for maven 3.0.3
 export M2_HOME=/msu/res1/Software/maven3.0.5/apache-maven-3.0.5
 export M2=$M2_HOME/bin
@@ -134,11 +134,23 @@ alias antlr4='java -jar /msu/res1/Software/antlr/antlr-4.0-complete.jar'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
 
 
+#export LD_LIBRARY_PATH=/opt/fame/timeiq/timeiqcharts/tools:
 export LD_LIBRARY_PATH=/opt/fame/timeiq/lib/linux_x86/64
-
 #extra fame
 #provide paths for timeiq and timeiqCharts
 export timeiqdir=/opt/fame/timeiq
 export timeiqChartsDir=/opt/fame/timeiq/timeiqcharts/tools
 export CLASSPATH=$timeiqChartsDir/lib/TimeIQCharts.jar:$timeiqChartsDir/lib/JimiProClasses.zip:$timeiqdir/lib/timeiq.jar:$timeiqdir/lib/TimeIQLicense.jar:.:$timeiqChartsDir:$timeiqdir/lib/commons-codec-1.3.jar
 
+
+
+#for ctocpp
+export PATH=/msu/res1/Software/garyUsr/local/bin/:$PATH
+
+
+#export LD_LIBRARY_PATH=/opt/atlas/lib:/msu/res2/m1gsa00/forGitSparseAMA/sparseAMA/target/nar/sparseAMA-1.0-SNAPSHOT-amd64-Linux-g++-shared/lib/amd64-Linux-g++/shared/:$LD_LIBRARY_PATH
+
+export LD_LIBRARY_PATH=/opt/fame/timeiq/lib/linux_x86/64:/a/msulx1/lcl/msu/home/m1gsa00/git/sparseAMA/target/nar/sparseAMA-1.0-SNAPSHOT-amd64-Linux-g++-shared/lib/amd64-Linux-g++/shared
+
+#for javacc
+export PATH=/msu/res1/Software/javaCC/javacc-5.0/bin:$PATH

@@ -45,6 +45,7 @@
 
 (setq auto-mode-alist (cons '("\.math$" . math-mode) auto-mode-alist))
 
+(add-to-list 'auto-mode-alist '("\\.m\\'" . nil))
 
 (put 'eval-expression 'disabled nil)
 
@@ -71,6 +72,7 @@
 
 
 
+(load "~/emacsEls/someUsefulLatex.el")
 (load "~/emacsEls/letter-initialization.el")
 (load "~/emacsEls/gary1.el")
 ;; ; Define C-c C-t to run my favorite command in shell mode:
