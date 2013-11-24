@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{authordate1-4}
+\usepackage{frb}
+\usepackage{bookman}
+\usepackage{amsmath}
+%\spreadout
+\myphone{(202) 452-2687}
+\myemail{ganderson\char64frb.gov}
+\myuucp{}
+\myname{Gary S. Anderson}
+\myrank{}
+\sendto{}
+
+
+\makeatletter
+\def\fullpath{\begingroup\everyeof{\noexpand}\@sanitize
+  \edef\x{\@@input|"find `pwd` -name \jobname.tex" }%
+  \edef\x{\endgroup\noexpand\zap@space\x\noexpand\@empty}\x}
+\makeatother
+
+\begin{document}
+%\spreadout
+\begin{letter}{To Whom It May Concern:}
+
+
+%file located in \footnote{\fullpath}
+
+%mailinglabel
+%\cc{}
+%\initials{}
+%\ps{}
+This document is the cover letter for my review of
+MS 24712-1 ``Solvability of Perturbation Solutions in DSGE Models'' by Hong Lan and Alexander Meyer-Gohde that has been submitted for publication in 
+the {\em International Economic Review.}
+The text which follows is meant to\ elaborate upon my {\bf Strong Revise and Resubmit} recommendation.
+
+\begin{description}
+\item[Paper Objectives] \ 
+
+The paper shows that a straightforward application of
+linear algebraic techniques can provide proofs of several important properties
+of standard perturbation method solution procedures.
+They present 
+conditions guaranteeing that well known iterative procedures can compute perturbation solutions:
+  \begin{itemize}
+  \item of arbitrarily high order for stationary models.
+  \item to a finite order for non-stationary models.
+  \item contain no first order perturbation parameter terms.
+\end{itemize}
+Their conditions generalize the local existence theorem found in\cite{jin02}.
+They provide an example demonstrating that iterative procedures can fail for
+non-stationary models.
+
+\item[Key Insights] \ 
+
+The authors 
+
+\begin{itemize}
+\item build upon linear algebraic tools presented in\cite{vetter1973} to provide
+a concise linear algebraic characterization of the linear systems that
+arise in computing higher order perturbation solution coefficients.
+\item provide (often constructive) proofs based on properties of 
+matrix pencils and Sylvester equations.
+\item Provided a good example showing how the iterative procedure for computing
+perturbation expansion coefficients can break down.
+\end{itemize}
+
+\item[Problems] \ 
+
+Unfortunately, the argument was very difficult to follow. I found the discussion
+very disjoint.  It was very difficult to navigate the argument as I had to
+often flip back and forth between the main text and (unspecified) sections
+of the appendix. 
+Since there are so many ``moving parts,'' I think
+ it would be useful to provide a paragraph
+providing a  concise description of the components of the proof and  how the
+various  parts of the proof are (or are not) interconnected.
+
+\item[Recommendation] \ 
+
+I argue for a {\bf Strong Revise and Resubmit} recommendation.  I think the
+subject matter is of growing relevance for economic modeling.  It is reassuring
+to know that checking stability properties at first order is
+sufficient to be sanguine about computing higher order terms for saddle-point
+stationary models.  
+In addition, providing conditions for computing perturbation solutions
+for non-stationary is a useful contribution. My only real complaint is in the
+difficulty I had following the text.
+
+\end{description}
+\bibliographystyle{authordate1}
+\bibliography{files}
+
+\end{letter}
+%\mailinglabel
+\end{document}

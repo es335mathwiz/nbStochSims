@@ -186,6 +186,7 @@ $impPath=$gitDir<>"ImpulseResponseErgodic/ImpulseResponseErgodic";
 $nAMAPath=$gitDir<>"mathAMA/NumericAMA/NumericAMA";
 $sAMAPath=$gitDir<>"mathAMA/SymbolicAMA/SymbolicAMA";
 $oldPertPath=$gitDir<>"mathAMA/Perturbation/Perturbation";
+$projPath=$gitDir<>"ProjectionMethodTools/ProjectionMethodTools";
 
 prepSCE2013[]:=
 Module[{},
@@ -195,4 +196,11 @@ $Path=PrependTo[$Path,$impPath];
 $Path=PrependTo[$Path,$nAMAPath];
 $Path=PrependTo[$Path,$sAMAPath];
 $Path=PrependTo[$Path,$oldPertPath];
+$Path=PrependTo[$Path,$projPath];
+Needs["ImpulseResponseErgodic`"];
+Needs["ProjectionMethodTools`"]; pre = "gov.frb.ma.msu."; InstallJava[];
+Get["neoKeynesianEqnsSubs.mth"]
+AddToClassPath[
+"/msu/res2/m1gsa00/sce13/",
+  "/msu/res1/Software/mavenRepositories/tryRep/gov/frb/ma/msu/ProjectionMethodToolsJava/0.0.1-SNAPSHOT/ProjectionMethodToolsJava-0.0.1-SNAPSHOT.jar",   "/msu/res1/Software/mavenRepositories/tryRep/gov/frb/ma/msu/commons-math/1.0-SNAPSHOT/commons-math-1.0-SNAPSHOT.jar",   "/msu/res1/Software/mavenRepositories/tryRep/math/nist/gov/Jama/1.0.3/Jama-1.0.3.jar"];
 ]

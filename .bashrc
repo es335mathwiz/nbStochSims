@@ -2,8 +2,14 @@
 export X_WINDOW_MANAGER=/usr/bin/startkde
 export HOME=/msu/home/m1gsa00
 
+export http_proxy="http://bender.rsma.frb.gov:3128"
+
 #printer settings
-export my_printer=msupr1
+export my_printer=prn-m2232
+lpoptions -d prn-m2124 > /dev/null
+lpoptions -p prn-m2124 -o InputSlot=Tray3 > /dev/null
+
+
 export LPDEST=$my_printer
 export PRINTER=$my_printer
 export EDITOR=emacs
@@ -37,42 +43,29 @@ alias toSwish="cd "$SWISHDIR"; cat example"
 
 
 
-
-#define git merge/conflict experiment dirs
-export mergeConflictDir=/msu/res2/Shared_Projects/MPSCode/mergeConflictResolution
-export amyDir=mergeConflictDir/amy/amySharedProject
-export benDir=mergeConflictDir/ben/benSharedProject
-export carlDir=mergeConflictDir/carl/carlSharedProject
-
-#define git flow experiment dirs
-export devFlowDir=/msu/res2/Shared_Projects/MPSCode/gitFlowExamples
-export amyDir=mergeConflictDir/amy/amySharedDevProject
-export benDir=mergeConflictDir/ben/benSharedDevProject
-export carlDir=mergeConflictDir/carl/carlSharedDevProject
-
-
-#add git flow to path
-export PATH=/add/lib/gitflow:$PATH
-
-
 #tex dirs
 #export TEXINPUTS=.
-export TEXINPUTS=$THOME/texStyles/:$TEXINPUTS
+#export TEXINPUTS=$THOME/texStyles/:$TEXINPUTS
+#export TEXINPUTS=$TEXINPUTS:$THOME/texBibs
+export TEXINPUTS=$TEXINPUTS:$THOME/texStyles/
 export TEXINPUTS=$TEXINPUTS:$THOME/texBibs
 export BIBINPUTS=.
-export BIBINPUTS=::$HOME/RES2/pdfEtc
+export BIBINPUTS=::../../bibFiles::/msu/home/m1gsa00/git/paperProduction/bibFiles
 export CLASSPATH=""
 
 #mathematica
-#export MATHDIR=/opt/mathematica9
+export MATHDIR=/opt/mathematica9
 #export PATH=$MATHDIR:$PATH
-export MATHDIR=/opt/mathematica8
-export PATH=$MATHDIR/bin:$PATH
+#export MATHDIR=/opt/mathematica8
+export PATH=$MATHDIR:$PATH
 export JLinkLibLoc=$MATHDIR/SystemFiles/Links/JLink/SystemFiles/Libraries/Linux
 export CLASSPATH=$CLASSPATH:$MATHDIR/SystemFiles/Links/JLink/JLink.jar
 export TEXINPUTS=$TEXINPUTS:$MATHDIR/SystemFiles/IncludeFiles/TeX
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MATHDIR/SystemFiles/Links/JLink/SystemFiles/Libraries/Linux-x86-64
-
+alias math8="/opt/mathematica8/bin/math"
+alias math9="/opt/mathematica9/math"
+alias mathematica8="/opt/mathematica8/bin/mathematica"
+alias mathematica9="/opt/mathematica9/mathematica"
 
 
 #cuda
@@ -154,3 +147,45 @@ export LD_LIBRARY_PATH=/opt/fame/timeiq/lib/linux_x86/64:/a/msulx1/lcl/msu/home/
 
 #for javacc
 export PATH=/msu/res1/Software/javaCC/javacc-5.0/bin:$PATH
+
+#for matio
+export LD_LIBRARY_PATH=/opt/icc/lib/intel64/:/msu/res1/Software/matio-1.5.1/./src/.libs/
+
+#xalan
+
+export CLASSPATH=/msu/res1/Software/xalan-j_2_7_1/xalan.jar:$CLASSPATH
+
+
+
+# INTEL FORTRAN
+
+#source /opt/intel/bin/ifortvars.sh intel64 
+#source /opt/intel/bin/iccvars.sh intel64
+
+
+
+#python 
+export PATH=/msu/res1/Software/anaconda/envs/py33/bin:$PATH
+
+
+
+
+
+#define git merge/conflict experiment dirs
+export mergeConflictDir=/msu/res2/Shared_Projects/MPSCode/mergeConflictResolution
+export amyDir=mergeConflictDir/amy/amySharedProject
+export benDir=mergeConflictDir/ben/benSharedProject
+export carlDir=mergeConflictDir/carl/carlSharedProject
+
+#define git flow experiment dirs
+export devFlowDir=/msu/res2/Shared_Projects/MPSCode/gitFlowExamples
+export amyDir=mergeConflictDir/amy/amySharedDevProject
+export benDir=mergeConflictDir/ben/benSharedDevProject
+export carlDir=mergeConflictDir/carl/carlSharedDevProject
+
+
+#add git flow to path
+export PATH=/add/lib/gitflow:$PATH
+#add use newer git flow to path
+export PATH=/opt/local/bin:$PATH
+

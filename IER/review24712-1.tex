@@ -1,0 +1,349 @@
+\documentclass[12pt]{article}
+\usepackage{authordate1-4}
+\usepackage{datetime}
+\usepackage{amsmath}
+\title{Review 24712-1 ``Solvability of Perturbation Solutions in DSGE Models'' by Hong Lan and Alexander Meyer-Gohde}
+%\author{Gary S. Anderson}
+\newcommand{\ny}{n_y}
+\newcommand{\nz}{(n_y+n_e)}
+\begin{document}
+\maketitle
+
+
+\makeatletter
+\def\fullpath{\begingroup\everyeof{\noexpand}\@sanitize
+  \edef\x{\@@input|"find `pwd` -name \jobname.tex" }%
+  \edef\x{\endgroup\noexpand\zap@space\x\noexpand\@empty}\x}
+\makeatother
+
+
+
+%file located in \footnote{\fullpath}
+
+%mailinglabel
+%\cc{}
+%\initials{}
+%\ps{}
+This document is my review of
+MS 24712-1 ``Solvability of Perturbation Solutions in DSGE Models'' by Hong Lan and Alexander Meyer-Gohde which has been submitted for publication in 
+the {\em International Economic Review.}
+The text which follows is meant to\ elaborate upon my {\bf Strong Revise and Resubmit} recommendation.
+
+\begin{description}
+\item[Paper Objectives]\ 
+
+ The paper shows that a straightforward application of
+linear algebraic techniques can provide proofs of several important properties
+of standard perturbation method solution procedures.
+They present 
+conditions guaranteeing that well known iterative procedures can compute perturbation solutions:
+  \begin{itemize}
+  \item of arbitrarily high order for stationary models.
+  \item to a finite order for nonstationary models.
+  \item contain no first order perturbation parameter terms.
+\end{itemize}
+Their conditions generalize the local existence theorem found in\cite{jin02}.
+They provide an example demonstrating that iterative porcedures can fail for
+nonstationary models.
+
+\item[Key Insights] \ 
+
+The authors 
+
+\begin{itemize}
+\item build upon linear algebraic tools presented in\cite{vetter1973} to provide
+a concise linear algebraic characterization of the linear systems that
+arise in computing higher order perturbation solution coefficients.
+\item provide (often constructive) proofs based on properties of 
+matrix pencils and Sylvester equations.
+\item Provided a good example showing how the iterative procedure for computing
+perturbation expansion coefficients can break down.
+\end{itemize}
+
+\item[Problems] \ 
+
+Unfortunately, the argument was very difficult to follow. I found the discussion
+very disjoint.  It was very difficult to navigate the argument as I had to
+often flip back and forth between the main text and (unspecified) sections
+of the appendix. 
+Since there are so many ``moving parts,'' I think
+ it would be useful to provide a paragraph
+providing a  concise description of the components of the proof and  how the
+various  parts of the proof are (or are not) interconnected.
+
+\item[Recommendation] \ 
+
+I argue for a {\bf Strong Revise and Resubmit} recommendation.  I think the
+subject matter is of growing relevance for economic modeling.  It is reassuring
+to know that checking stability properties at first order is
+sufficient to be sanguine about computing higher order terms for saddlepoint
+stationary models.  
+In addition, providing conditions for computing perturbation solutions
+for nonstationary is a useful contribution. My only real complaint is in the
+difficulty I had following the text.
+
+\item[Proofs] \ 
+
+  \begin{itemize}
+  \item Establish model in equation 1. Definition of perturbation 
+solution and variables $y_t(\sigma,z_t)$ in equations 2 and 3.
+\item Define taylor series expansion in equation 9 (don't mention derivation in the appendix 2 or explain derivative notation.  Don't explicitly use Vetter
+in the paper.)
+\item They provide (order and rank ) assumptions that guarantee the
+existence of  for a first order solution with stable $y_z z_y$
+\item Lemma 3.1 presents the generalized Sylvester equation for the (j,i) derivative of equation 5 emphasizing that, except for first order, the leading coefficient matrices on the $y_{z^j\sigma^i}$ are the same $\forall j, i$: $f_{\tilde{y}}$ and$f_y +f_{\tilde{y}}y_zz_y$
+\item They apply the generalized B\`{e}zout Theorem to factor the matrix quadratic equation  (theorem statement has extra $M_m$)
+  \begin{gather*}
+    M(\lambda)=f_{\tilde{y}} \lambda^2 + f_y \lambda + f_zz_y\\
+(f_{\tilde{y}} \lambda + (f_{\tilde{y}}y_zz_y+ f_y ))(I_{n_y} -y_zz_y) +(f_{\tilde{y}} (y_zz_y)^2 + f_y y_zz_y + f_zz_y) \intertext{since last term is zero by construction}
+\underset{P_U(\lambda)}{(f_{\tilde{y}} \lambda + (f_{\tilde{y}}y_zz_y+ f_y ))}\underset{P_S(\lambda)}{(I_{n_y} -y_zz_y)}
+  \end{gather*}
+\item They note that the regularity of $P_S(\lambda), P_U(\lambda)$ and the stability  implies that $(f_{\tilde{y}}y_zz_y+ f_y )$ must be nonsingular. (the point out that one can solve for $y_z$ but not clear to me why this is should emphasize this was important for obtaining first order solutions only.)
+\item To apply \cite{chu87}, they demonstrate that 
+  \begin{gather*}
+(    z_yy_z)^{\otimes [j]}
+  \end{gather*}
+  \end{itemize}
+
+
+
+
+
+
+\item[Paper Summary] \ 
+  \begin{description}
+  \item[Abstract]
+  \item[Introduction] 
+  \item[DSGE Problem Statement and Policy Function]
+    \begin{gather*}
+     0=E_t[f(y_{t+1},y_t,y_{t-1},\epsilon_t)]
+ \intertext{auxiliary parameter $\sigma$}
+y_t=y(\sigma,z_t) \intertext{where}
+z_t=
+\begin{bmatrix}
+  y_{t-1}\\ \epsilon_t
+\end{bmatrix}
+    \end{gather*}
+    \begin{itemize}
+    \item Define Deterministic Steady State
+    \item Define Taylor Series 
+    \end{itemize}
+  \item[Higher Order Perturbation: Existence and Uniqueness]
+  \item[Solvents, Sylvesters, and Proof of Theorem 3.7]
+  \item[Nonstationary Policy Functions]
+  \item[Applications]
+  \item[Conclusion]
+  \item[Appendix] 
+  \end{description}
+\end{description}
+
+
+
+\begin{itemize}
+\item  From Abstract
+
+\begin{itemize}
+\item disallow j = 0 in Theorem 3.7.
+\item Prove existence of unique solutions for coefficients of nonlinear perturbations of arbitrary order standard regularity and saddle stability
+\item Straightforward ``matrix analysis'' Should specify. Use kronecker tensor calculus
+\item Relax local existence assumptions  ( whose assumptions )
+\item prove lcal solution independ of terms first order in perturbation parameter  (only true because of zero mean )
+\item Extend approach to nonstationary models provide necessary and sufficient conditions for solvability and example of solvability failure
+\end{itemize}
+
+\item Introduction rambles too long.
+
+\item paragraph
+\begin{itemize}
+\item macro dsge increasingly use nonlinear. one method perturbation
+\item successive diff to recover coefficients higher order taylor expansion of policy function  (always policy function?)
+\item Whether policy function exists and differentiable not the issue (meaning not treating this?)  Can they be uniquely recovered by solving equations resulting from differentiating the equilibrium conditions.
+\item Authors indicatez solvability/nonsingularity ( different? use one)
+\item currently proceeed under tenuous assumption of solvability since no proof
+\item corroborate that standard assumptions for existence and uniqueness of first order are sufficient  (necessary?)  to guarantee solvable for all order.  (radius of convergence never vanishingly small?)
+\end{itemize}
+
+
+\item paragraph
+
+\begin{itemize}
+\item main result build on Sylvester equation representation  (never really defined)  represent all linear equations in sylvester form
+\item verify thatt solvability changes  as per Jin and Judd ( how so ?)
+\item lone ``trailing matrix'' kronecker tensor power of linear transition matrix
+\item change in solvability is  systematic and dependent on eigenvals of matrix quadratic at first order.
+\item Apply generalized B\'{e}zout to deflate(??) the quadratic equaiton with unique stable first order solution  to relate the set of remainin unstable eigenvalues to a generalized eigenvalue problem forming remaining homogeneous coefficients in the series of Sylvester equations.
+\item Due to separationn spectra of pencils in generalized Sylvester equation  (now it's a generalized sylvester equaiton, why?) can use Chi necessary and sufficient existence and uniqueness for whole sequence of Sylvester equations
+\item They can extend Kim Kim  Schaumburg and Sims beyond second order
+\end{itemize}
+\item paragraph
+
+
+\begin{itemize}
+\item Kim, Kim Schaumber and Sims argue boundedness of shocks and stationarity not essential for validity perturbation. Good thing since in many applications of DSGE's do not want to impose stationarity or boundedness assumptions
+\item LMG  addresses unit root stability directly solvability holds to arbitrary order.
+\item for nonstationarity, need sufficient distance between upper bound on eigenvalues of nonstationary first order soluutin and lower bound on remaining eigenvalues of first order approx to guarantee out to finite order ( why finite order, if not higher (infinite) 
+order is it a taylor series expansion at all )
+\item  must preclude any singularities in sets of linear equations for higher order coeffs.
+\item provide simple example of failure
+\item known policy function infinitely differentiable, but cannont recover past first order.
+\end{itemize}
+
+\item paragraph
+
+\begin{itemize}
+\item assume existence and smoothness of policy frunction and solve for Taylor coefficients
+\item Eliminates solvability assumpton Jin Judd local existence theorem. Woodford has an alternative. Perhaps they  can elaborate on what it is.
+\item Schmitt Grohe Uribe assume invertiblity to show homogenous perturbation first order derivative  perturbations parameter zero  Eliminate the need for assumption.
+\end{itemize}
+\item paragraph
+
+\begin{itemize}
+\item Section 2 nonlinear DSGE and preliminaries for approximation
+\item Section 3 derive perturbation of arbitrary and present solvability
+\item Section 4 provides proof
+\item Section 5 nonstationary policy functions with example failing solvability
+\item Section 6 local existence of  (not already done) and first-order independence from perturbation parameter
+\item Section 7 concludes
+\end{itemize}
+
+
+\item Section 2
+  \begin{itemize}
+  \item
+    \begin{gather*}
+     0=E_t[f(y_{t+1},y_t,y_{t-1},\epsilon_t)]
+   \intertext{ f assumed $C^m$ in all arguments}
+\epsilon_t \,\, \text{iid}\\
+ E[\epsilon_t^{\otimes[m]}] \intertext{auxiliary parameter $\sigma$}
+y_t=y(\sigma,z_t) \intertext{where}
+z_t=
+\begin{bmatrix}
+  y_{t-1}\\ \epsilon_t
+\end{bmatrix}
+    \end{gather*}
+  \item Taylor series derivation given in appendix as corollary A.2, but never referred to in text
+  \item text erroneously refers to $R^+$ notation as in forthcoming paper
+\item allow unit roots and don't require unique steady state
+\item derivatives form a hypercube
+\item differentiate conformably with the tensor product (should state whose methodology this corresponds to
+\item Matrix derivative definition should reference Vetter
+\item perhaps shouldn't appear here since it is not explicitly used.
+\item notation confusing.  Have lost time subscript and now have derivatives indicated in subscript
+\item should explain this so that reading 9 is easier
+\item mention dimensions so that matrix multiplications make sense
+  \begin{gather*}
+    y_{z^j\sigma^i} \text{ is } [\ny \times \ny^j +1][\ny^j +1 \times 1]
+  \end{gather*}
+  \end{itemize}
+
+
+\item Section 3
+  \begin{itemize}
+  \item successively differentation
+
+    \begin{gather*}
+y_z= 
+      \begin{bmatrix}
+       I_{\ny} &0_{\ny \times n_e}
+      \end{bmatrix},
+z_y=      \begin{bmatrix}
+        \mathcal{D}_{y_{t-1}}[y_t] \\ \mathcal{D}_{\epsilon_{t}}[y_t]
+      \end{bmatrix}
+    \end{gather*}
+  \item first use of kronecker derivative, but only to first order so kronecker doesn't really come into play
+  \item perhaps better to just talk about conformable matrices in formula 9
+  \item invertibility probably only requires no common eigenvalues  ( saddle point stablity only one way -- the most importent)
+  \item arbitrary order refers to appendix but doesn't give section
+
+\item should provide definition of Sylvester equation and generalized Sylvester equation.  Perhaps former as footnote
+\item Lemma 3.1 refers to coeficients as undetermined, probably should be unknown since if Lemma in force, they are determined.  Even if Lemman not in force may be determined and unique.
+\item What is meant by homogeneous.  It's not a homogeneous linear equation since RHS not zero. Perhaps referring to the similar structure at each stage of
+calculation
+\item Why referring to second order in footnote  (why do we need to know that 2nd order is special to start induction)
+\item What is Importance of ``trailing matrix $(z_yy_z)^{\otimes[j]}$ is Kronecker tensor power orf linear transition matrix of the state space and changes with the order of approximation''
+\item matrix quadratic equation Gantmacher reference not right
+\item can use blanchard Kahn at beginning of existence uniqueness discussion then definition directly to Bezout theorem
+\item eigenvalue separation so that complex pairs always together can get you back to real
+\item why saying lambda matrix of degree two?
+\item assumption order should have lambdas inside the determinant
+\item error ``constructed using these stable root''
+\item perhaps give reference to how ``construct solution from stable'' from higham
+\item set product $y_z z_y$ unique way to do that for $y_z$?
+\item ``not just unit root'' probably should refer to magnitude of eigenvalues for separation
+  \end{itemize}
+
+\item Section 4
+
+
+
+  \begin{itemize}
+  \item should define pencils and/or provide a specific reference
+  \item deflating? perhaps factoring
+  \item give Gantmacher chapter and section
+  \item footnote 23 has appendix reference to pencil, but should come earlier.
+But it's not clear why this footnote is in the text at the point of reference on page 10
+\item Why mention Viete's formula
+\item definition of regular pencil
+  \item  Should prove Lemma 6.1 before moving on to results that depend on
+Sylvester equation  Lemma 6.1 only depends on Factoring the Quadratic Matrix
+
+\item should more clearly state that the first proofs in section 4.1 are for first order case -- pre sylvester equations
+\item prove ``they are fulfilled'' awk
+\item ``adapt'' adopt Chu notation temporarily not good
+\item Generalized Sylvester Equation\cite{chu87}
+    \begin{gather*}
+      AXB - CXD +E =0
+    \end{gather*}
+\item Earlier authors studied\cite{sylvester84,bartels72}
+\begin{gather*}
+      AX - XB +E =0
+\end{gather*}
+  \end{itemize}
+
+\item Section 5
+  \begin{itemize}
+    \item locally nonstationary? equivalent to finite time span
+    \item no need to repeat the unit root.  perhaps should move the unit root points to above
+    \item why now  latent roots real  ( and why say inside unit circle )
+  \end{itemize}
+
+\item Section 6
+  \begin{itemize}
+    \item Non zero mean then not homogeneous and sigma matters
+  \end{itemize}
+
+\item Section 7
+  \begin{itemize}
+    \item
+  \end{itemize}
+
+\item Appendix A1
+  \begin{itemize}
+  \item apparently uses Vetter equation 31 but overloads use of M  why include the remainder
+  \item should define notation then probably don't needvetter for taylor computation
+  \item where is matrix product , chain kronecker used
+  \end{itemize}
+\item appendix A2
+  \begin{itemize}
+  \item should give reference
+  \end{itemize}
+\item appendix A3
+  \begin{itemize}
+  \item needs careful check
+  \end{itemize}
+\item appendix A4
+\item appendix A5
+\item appendix A6
+  \begin{itemize}
+  \item short not much to check
+  \end{itemize}
+\item appendix A7
+
+
+\item relation ship to volterra calculations
+\item Other matrix calculus references.
+\cite{NEUDECKER:88}
+\end{itemize}
+\bibliographystyle{authordate1}
+\bibliography{files}
+\end{document}
