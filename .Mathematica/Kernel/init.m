@@ -8,7 +8,7 @@ Print["linux environment: executing commands in init.m  "<>FindFile["init.m"]]]
 
 Needs["JLink`"]
 If[windowsQ[],
-ReinstallJava[CommandLine->"C:/RSMA/Java/jdk1.7.0/bin  -showversion"],
+ReinstallJava[CommandLine->"C:/Program Files/Java/jdk1.7.0_60/bin/java  -showversion"],
 ReinstallJava[CommandLine->"/msu/scratch2/m1gsa00/jdk1.7.0/bin/java  -showversion"]]
 Off[Syntax::sntufn];
 Needs["console`"]

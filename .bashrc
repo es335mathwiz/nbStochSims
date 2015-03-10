@@ -5,9 +5,12 @@ export HOME=/msu/home/m1gsa00
 export http_proxy="http://bender.rsma.frb.gov:3128"
 
 #printer settings
-export my_printer=prn-m2232
-lpoptions -d prn-m2124 > /dev/null
-lpoptions -p prn-m2124 -o InputSlot=Tray3 > /dev/null
+#http://www.rsma.frb.gov/Guide/Print/Printers.html
+#export my_printer=prn-m2232
+#fsprpr1 for 1454 printer
+export my_printer=colorprk
+#lpoptions -d prn-m2124 > /dev/null
+#lpoptions -p prn-m2124 -o InputSlot=Tray3 > /dev/null
 
 
 export LPDEST=$my_printer
@@ -27,7 +30,7 @@ export THOME=$DHOME/texFiles
 #setup prompt  
 #(http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html)
 export PS1="{\h,\w,\!}$"
-
+\
 
 #setup place for bins ( will ln -s to this dir
 export RES2=/msu/res2/m1gsa00
@@ -44,13 +47,15 @@ alias toSwish="cd "$SWISHDIR"; cat example"
 
 
 #tex dirs
-#export TEXINPUTS=.
 #export TEXINPUTS=$THOME/texStyles/:$TEXINPUTS
 #export TEXINPUTS=$TEXINPUTS:$THOME/texBibs
-export TEXINPUTS=$TEXINPUTS:$THOME/texStyles/
-export TEXINPUTS=$TEXINPUTS:$THOME/texBibs
-export BIBINPUTS=.
-export BIBINPUTS=::../../bibFiles::/msu/home/m1gsa00/git/paperProduction/bibFiles
+#export TEXINPUTS=$TEXINPUTS:$THOME/texStyles/
+#export TEXINPUTS=$TEXINPUTS:$THOME/texBibs
+#export BIBINPUTS=.
+#export BIBINPUTS=::../../bibFiles::/msu/home/m1gsa00/git/paperProduction/bibFiles
+export TEXINPUTS=
+export TEXINPUTS=../../bibFiles:../../texFiles:$TEXINPUTS
+export BIBINPUTS=../../bibFiles:../../texFiles:$BIBINPUTS
 export CLASSPATH=""
 
 #mathematica
@@ -64,8 +69,10 @@ export TEXINPUTS=$TEXINPUTS:$MATHDIR/SystemFiles/IncludeFiles/TeX
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MATHDIR/SystemFiles/Links/JLink/SystemFiles/Libraries/Linux-x86-64
 alias math8="/opt/mathematica8/bin/math"
 alias math9="/opt/mathematica9/math"
+alias math10="/opt/mathematica10/math"
 alias mathematica8="/opt/mathematica8/bin/mathematica"
 alias mathematica9="/opt/mathematica9/mathematica"
+alias mathematica10="/opt/mathematica10/mathematica"
 
 
 #cuda
@@ -143,13 +150,14 @@ export PATH=/msu/res1/Software/garyUsr/local/bin/:$PATH
 
 #export LD_LIBRARY_PATH=/opt/atlas/lib:/msu/res2/m1gsa00/forGitSparseAMA/sparseAMA/target/nar/sparseAMA-1.0-SNAPSHOT-amd64-Linux-g++-shared/lib/amd64-Linux-g++/shared/:$LD_LIBRARY_PATH
 
+
 export LD_LIBRARY_PATH=/opt/fame/timeiq/lib/linux_x86/64:/a/msulx1/lcl/msu/home/m1gsa00/git/sparseAMA/target/nar/sparseAMA-1.0-SNAPSHOT-amd64-Linux-g++-shared/lib/amd64-Linux-g++/shared
 
 #for javacc
 export PATH=/msu/res1/Software/javaCC/javacc-5.0/bin:$PATH
 
 #for matio
-export LD_LIBRARY_PATH=/opt/icc/lib/intel64/:/msu/res1/Software/matio-1.5.1/./src/.libs/
+export LD_LIBRARY_PATH=/opt/icc/lib/intel64/:/msu/res1/Software/matio-1.5.1/./src/.libs/:$LD_LIBRARY_PATH
 
 #xalan
 
@@ -171,6 +179,9 @@ export PATH=/msu/res1/Software/anaconda/envs/py33/bin:$PATH
 
 
 
+
+
+
 #define git merge/conflict experiment dirs
 export mergeConflictDir=/msu/res2/Shared_Projects/MPSCode/mergeConflictResolution
 export amyDir=mergeConflictDir/amy/amySharedProject
@@ -186,6 +197,10 @@ export carlDir=mergeConflictDir/carl/carlSharedDevProject
 
 #add git flow to path
 export PATH=/add/lib/gitflow:$PATH
-#add use newer git flow to path
+#add use newer git to path
 export PATH=/opt/local/bin:$PATH
+#for java keep it earliest on path
+export PATH=/msu/res1/Software/java/jdk1.7.0_21/bin/:$PATH
 
+#python 
+export PATH=/msu/res1/Software/anaconda/envs/py33/bin:$PATH

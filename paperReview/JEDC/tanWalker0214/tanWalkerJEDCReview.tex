@@ -1,0 +1,401 @@
+\documentclass[12pt]{article}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdfinfo={
+  pdfproducer={},
+  Title={},
+  Subject={},
+  Author={},
+  }
+}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{authordate1-4}
+\begin{document}
+
+\centerline{\large\bf Reviewer ``Blind'' Comments to Authors}
+
+\begin{description}
+\item[Four Cases] The text identifies four cases for the model of section
+4.2.  Although there are, in fact, four cases, the authors appear to 
+have either omitted additional constraints on the parameters or to have 
+mischaracterized the ranges for $\alpha, \beta, \gamma$ for the cases.  
+For example, a single root inside the unit circle requires
+\begin{gather*}
+(-1<\alpha<1 \wedge \alpha \ne 0) \wedge \left (
+\{\gamma > 1\} \cup \left ( \gamma < \frac{(\beta +1)}{(1-\beta )}\right)\right)
+\end{gather*}
+Neither the authors nor the 
+paper they refer to \cite{Leeper91} 
+constrains the signs of the $\alpha$ or $\gamma$.
+
+\item[Maple/muPad] Will the authors make the code available?
+Matlab has recently replaced Maple with muPad.  What versions of
+Matlab will the author's code support?  
+
+\item[Symbolic Computation] The author's development of a symbolic algebra
+solution for linear rational expectations models 
+is novel and potentially useful.  However, it should be noted that  \href{http://www.federalreserve.gov/pubs/oss/oss4/papers/reliableMath/reliableMath.html}{ a symbolic algebra version of the Anderson-Moore Algorithm (AMA)} has been available for about 10 years.\footnote{Hover over the sentence to follow the link.}
+
+\item[Decision Rule Computation] \cite{Anderson10} provides 
+an auto-regressive representation of the solution (often referred to as 
+a decision rule representation) as well as a formula for computing impulse 
+response functions. It would be useful to  refer 
+the reader to techniques for discovering the decision rule
+representation for the solutions provided.
+
+
+
+\item[Why not Volterra series?] The utility of linear forecasts
+for  $y_t$ given the exogenous
+process appears to be the key model feature that allows the 
+algebra in their proof to work.  The AMA approach relies upon this 
+same feature but can accommodate more general exogenous processes.
+I suspect that the authors could also modify their
+algorithm to accommodate more general exogenous processes.
+
+
+\item[Useful in Practice?] Although useful in theory, the
+proposed algorithm may not be useful in practice.
+I implemented the author's approach in Mathematica.\footnote{I used the Elsevier website to ask for code from the authors, but never got a response.}
+My implementation of the Tan Walker Approach (TWA)
+only computes the C(L)  series  (impulse response functions) 
+described in the paper.  I did not experiment with obtaining the decision
+rule representation.
+As noted above, the Mathematica implementation of AMA 
+computes both the ``decision rule'' and the impulse
+response function.  The computation time below refers to obtaining both
+forms of the solution.\footnote{The formula in \cite{Anderson10} requires
+iteration unless the exogenous process can be cast as an AR(1).  I experimented
+with calculations just a dozen or so periods ahead.}
+
+When my implementation of their TWA terminates, the TWA and AMA 
+solutions agree.
+I did not have time to do much experimentation, but for the models I tried,
+the symbolic algebra version of AMA was much much faster than the 
+symbolic implementation of TWA.
+I suspect that the bottleneck for the Tan Walker implementation is 
+symbolically computing the Smith Normal Form.  For the ``Asset Pricing Approximation'' model listed below,  the AMA algorithm required 12 seconds of CPU time.
+After running for 24 hours, the Mathematica code 
+was unable to compute the Smith Normal Form encountered
+in that model.\footnote{ The nonlinear model solution I computed
+had symbolic place holders for
+the steady state linearization point. This may have added significantly to the
+execution time for the Smith Normal Form.}
+
+
+\item[``Indispensable'' seems a bit strong] Although the 
+paper is carefully written and provides a novel alternative perspective
+to existing solution techniques, I could not conclude that other existing
+approaches could not also easily 
+deliver solutions for the examples provided in the text.
+
+\item[Unit Roots] It would be worthwhile for the authors 
+to comment on how their approach would deal with models that have unit roots.
+
+\item[Redundant Equations] In following the examples, 
+it might help the reader to show  
+all  the constraints -- even those that turn out not to help 
+``pin down'' the solution.
+
+
+\end{description}
+% $F_1=$\input{F1$42}
+% $G_0=$\input{G0$42}
+% $G_1=$\input{G1$42}
+
+% $A=$\input{AA$42}
+% $\phi_0=$\input{phi0$42}
+% $\psi_0=$\input{psi0$42}
+% $\psi_1=$\input{psi1$42}
+
+
+% So that
+% $H(z)=z(F(z^{-1}) + G(z))$=\input{pre$42}
+
+% and
+
+% $H(z)= U(z)^{-1}$\input{snf$42}$V(z)^{-1}$
+
+% where 
+
+% $U(z)=$\input{uu$42}
+
+% and
+
+% $V(z)=$\input{vv$42}
+
+% The roots are
+
+% \input{jr$42}
+
+% To apply the algorithms in the more recent paper\cite{Anderson10}
+
+% \begin{gather*}
+%   \sum_{i=-\tau}^\theta H_ix_{t+i} = \psi z_t
+% \end{gather*}
+
+% $H=$\input{hmat}
+
+% Leads to a transition matrix with eigenvalues:
+
+% \input{evls}
+
+
+
+% \begin{description}
+% \item[Impulse Response Functions] Can use my formulae to compute
+%   \begin{gather*}
+%     E_t (y_{t+k}) - E_{t-1} y_{t+k} providing the coefficients in the expansion Tan and Walker provide. \\
+%   \end{gather*}
+% \item[Volterra] do same for volterra (but then may want GIRF )
+% \item[Variable order?] IRF's and shocks order
+% \item[Check ROC?]
+% \item[Smith normal form] available without maple as in mupad?
+% \item[Case 1] Both $\frac{1}{\alpha}>1$ and $\frac{\beta}{\beta \gamma -\gamma +1}>1$
+
+% $\tilde{U}(z)=$\input{UTilde1$42}
+
+
+% $\tilde{U}(0)=$\input{UTilde1Z0$42}
+%  Should point out the first condition is for possibility of existence and how relates to $span(A) \subseteq span(R)$
+% Can $\psi_i$ ever enter without multiplicities?
+% Why just showing $U_{2\cdot}(z)$
+
+
+% Should use a different letter for the A in the rank condition
+
+% $\mathcal{A}(z)=$\input{bigA1$42}
+
+% $\mathcal{R}(z)=$\input{bigR1$42}
+
+% $\mathcal{Q}=$\input{bigQ1$42}
+
+% $\mathcal{A}(0)=$\input{bigA1Z0$42}
+% $\mathcal{R}(0)=$\input{bigR1Z0$42}
+
+% \item[Case 2] $\frac{1}{\alpha}<1$ and $\frac{\beta}{\beta \gamma -\gamma +1}>1$
+
+
+
+% $\tilde{U}(z)=$\input{UTilde2$42}
+
+
+% $\tilde{U}(\frac{1}{\alpha})=$\input{UTilde1Z0$42}
+%  Should point out the first condition is for possibility of existence and how relates to $span(A) \subseteq span(R)$
+% Can $\psi_i$ ever enter without multiplicities?
+% Why just showing $U_{2\cdot}(z)$
+
+
+% Should use a different letter for the A in the rank condition
+
+% $\mathcal{Q}=$\input{bigQ2$42}
+
+
+% $\mathcal{A}_0(z)=$\input{bigA2$42}
+
+% $\mathcal{R}_0(z)=$\input{bigR2$42}
+
+% $\mathcal{A}_1(z)=$\input{bigA2$42}
+
+% $\mathcal{R}_1(z)=$\input{bigR2$42}
+
+
+% $\mathcal{A}_1(0)=$\input{bigA21Z0$42}
+% $\mathcal{R}_1(0)=$\input{bigR21Z0$42}
+
+
+% $\mathcal{A}_2(\frac{1}{\alpha})=$\input{bigA22Z0$42}
+% $\mathcal{R}_2(\frac{1}{\alpha})=$\input{bigR22Z0$42}
+
+% \input{eqnsCase2}
+
+
+% Should use a different C for solution
+
+
+% $\mathcal{C}=$\input{bigCCase2}
+% \end{description}
+
+% \input{bigCSeries2$42}
+
+
+% $B=$\input{bmat2$42}
+
+% $\phi=$\input{fmat2$42}
+
+% $F=$\input{fmat2$42}
+
+
+% \begin{gather*}
+% x_{t}=B x_{t-1} + \sum_{k=0}^\infty F^k \phi \psi z_{t+s}  
+% \end{gather*}
+
+
+
+
+
+
+% \begin{description}\item[Wold shocks/ True Shocks] Conflating the two?
+% Wold representation is unique linear representation of time series where shocks are linear forecast errors.
+% \item[Impulse Response Functions] How GIRF?
+% \item[structural interpretation to errors] problematic
+% \item[Wold not true representation] Could be non linear or non-invertible
+% Useful examples?
+% \item[$\epsilon_t$ ] are the $\epsilon_t$ for y the same as for  x.  Impulse response in terms of fundamental or exogenous.
+% \item[In examples the A's are just Identity matrix]   $x_t= \epsilon$ inversion easy.  Should point out the necessity of recovering $\epsilon$ for impulse 
+% response functions or omit A.
+
+% \item[non identity example]
+
+
+% \begin{gather*}
+%   A_0= I\\
+% A_1= -A_0 C_1\\
+% A_k= -A_0 C_k- A_1C_{k-1}-\ldots-A_{k-1}C_1
+% \end{gather*}
+  
+% \item[Practical uses for Wold Decomposition]  Are there any.  Wold shocks moving average not same as impulse response function.  Best linear predictor.  Uncorrelated not independent  may be inappropriate for linearized models.
+% \item[more recent Anderson Moore paper ] has formulae
+% \item[multiplicities] how common how handle. zeroes easy and always irrelevant?
+% \item[implementation] issues?
+% \item[computation times?] Likely to be slow and often infeasible
+% \item[expectational errors unnecessary]
+% \item[Adds no new capability]
+% \item[Anderson continuous time]
+% \item[provide code] 
+% \item[for modesl with infinite lags leads infinite dimensional data structures implicit] 
+% \href{http://arxiv.org/pdf/1109.0783.pdf}{From }
+% We have insisted on numerical examples, but the co-recursive strategy is, of course, domain independent,
+% provided that an adequate set of mathematical operation is defined. The last example combined two
+% different sorts of sequences.
+% It is possible to write such algorithms in a symbolic setting, and we did it in Maple and in MuPAD.
+% But the language of these packages is strict; we used unevaluated macros in order to simulate the lazy
+% processing, and the “intermediate expression swell disease” is a serious hindrance. Probably the languages
+% based on rewriting, such as Mathematica, are better adapted to this kind of manipulations than
+% the very procedural Maple, but we haven’t tested it.
+% \end{description}
+
+% Requires non-singularity?  Restrictive wrt models?
+
+% \href{http://math.stackexchange.com/questions/222833/smith-normal-form-of-a-polynomial-matrix}{Smith Normal Form Transformations}
+
+% Symbolic solution is a good feature.
+
+% Compare symbolic speed.
+
+% What about unit roots.  How handle them practical and theoretical.
+
+% Guarantee real valued solutions?
+
+% Leeper section 4.4 $\gamma < 0$
+
+% Implicit in equation $|\alpha| > \beta^{-1}$  constantly refer to $|\alpha \beta <1$
+
+% Leeper doesn't constrain the signs either.
+% Active and passive regions depend on $\beta$
+
+% For example 
+
+% \begin{tabular}{|l|c|c|c|c|c|c|}
+% \hline
+%   \multicolumn{1}{|c|}{$|\alpha|\, \lessgtr\,  1,  \,\, |\gamma|\, \lessgtr\,  1$}&
+%   \multicolumn{1}{|c|}{$\alpha$}&
+%   \multicolumn{1}{|c|}{$\beta$}&
+%   \multicolumn{1}{|c|}{$\gamma$}&
+%   \multicolumn{1}{|c|}{$\frac{1}{\alpha}$}&
+% \multicolumn{1}{|c|}{$\frac{\beta }{\beta  \gamma -\gamma+1}$}&
+% \multicolumn{1}{|c|}{Roots Inside}\\
+% \hline
+% $|\alpha| <1, |\gamma|>1$&.5&.75&100&2.&-0.03&2\\
+% \hline
+% $|\alpha| <1, |\gamma|>1$&.5&.75&6.96&2.&-1.013&1\\
+% \hline
+% $|\alpha| >1, |\gamma|>1$&1.5&.75&100&.667&-0.03&3\\
+% \hline
+% $|\alpha| >1, |\gamma|>1$&1.5&.75&6.96&2.&-1.01&2\\
+% \hline
+% \end{tabular}
+
+% One root in requires $|\alpha |>\alpha ^2\land \frac{\beta }{|(\beta -1) \gamma+1|}>1$ which can be true for all non zero $\alpha$ such that $-1<\alpha<1$ or for $\alpha < -1$ and $\gamma < -\frac{(\beta+1)}{(\beta-1)}$ or $\gamma>1$
+
+
+
+
+% \appendix
+% \begin{gather*}
+% Z(a(n)) = \sum_0^\infty  a(n) z^{-n}
+% \end{gather*}
+
+% Other definitions ( bilateral ) possible so should include specific
+
+% \begin{verbatim}
+% For each question, please use the following scale to answer (place an x in the space provided): 
+
+% "To what extent does the article meet this criterion?"
+
+% 0	Fails by a large amount
+% 1	Fails by a small amount
+% 2	Succeeds by a small amount
+% 3	Succeeds by a large amount
+% 4	Not applicable
+
+% The subject addressed in this article is worthy of investigation.
+	
+% 0 __ 1 __ 2 __ 3 x__ 4 __
+
+
+% The information presented was new.
+
+% 0 __ 1 __ 2 __ 3 x__ 4 __
+
+% The conclusions were supported by the data.
+
+% 0 __ 1 __ 2 __ 3 x__ 4 __
+
+% Is there a financial or other conflict of interest between your work and that of the authors?
+
+% YES __  NO x__
+
+
+% Please give a frank account of the strengths and weaknesses of the article:
+
+
+
+% \end{verbatim}
+\newpage
+
+\centerline{\bf \large An Asset Pricing Approximation Model}
+
+\begin{verbatim}
+var  dc, dd, v_c, v_d, x;
+varexo e_c, e_x, e_d;
+
+parameters DELTA THETA PSI MU_C MU_D RHO_X LAMBDA_DX;
+
+DELTA=.99;
+PSI=1.5;
+THETA=(1-7.5)/(1-1/PSI); 
+MU_C=0.0015;
+MU_D=0.0015;
+RHO_X=.979;
+LAMBDA_DX=3;
+
+model;
+v_c       = DELTA^THETA * exp((-THETA/PSI)*dc(+1) + 
+(THETA-1)*log((1+v_c(+1))*exp(dc(+1))/v_c) ) * (1+v_c(+1))*exp(dc(+1));
+v_d       = DELTA^THETA * exp((-THETA/PSI)*dc(+1) + 
+(THETA-1)*log((1+v_c(+1))*exp(dc(+1))/v_c) ) * (1+v_d(+1))*exp(dd(+1));
+dc        = MU_C  + x(-1) + e_c;
+dd        = MU_D + LAMBDA_DX*x(-1) + e_d;
+x         = RHO_X * x(-1) + e_x;
+end;
+
+\end{verbatim}
+\bibliography{files,anderson}
+\bibliographystyle{authordate4}
+
+
+\end{document}

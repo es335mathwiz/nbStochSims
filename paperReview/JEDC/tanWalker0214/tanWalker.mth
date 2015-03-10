@@ -1,0 +1,331 @@
+Get["tanWalkerCode.mth"]
+
+(*
+appendix b solutions
+
+
+for ztransform, matlab and mathematica use
+sum   0 to infinity   f(n) z^(-n)
+note ROC requirement
+
+Limit[Sum[n^2 *2^(-n)* z^(-n),{n,0,kk}],kk->Infinity,Assumptions->Abs[z]>2] ==
+ZTransform[n^2*2^(-n) , n, z]
+*)
+
+
+F1={{1,0},{0,0}};
+G0={{-alpha,0},{1/beta,1}};
+G1={{0,0},{-alpha/beta,-(1/beta- gamma*(1/beta-1))}};
+psi0={{1,0},{0,-1(1/beta-1)}};
+psi1={{0,0},{1/beta,0}};
+Piy1={{1,0},{0,0}};
+AA=IdentityMatrix[2];
+phi={{0,0},{0,0}};
+
+
+PrependTo[$Path,"/msu/home/m1gsa00/Tealbook"];
+Needs["TeXTableForm`"]
+PrependTo[$Path,"/msu/home/m1gsa00/git/mathAMA/SymbolicAMA/SymbolicAMA/"];
+Needs["SymbolicAMA`"]
+hmat=ArrayFlatten[{{G1,G0,F1}}];
+myPsi={{mpsi11,mpsi12,mpsi13,mpsi14},{mpsi21,mpsi22,mpsi23,mpsi24}};
+{zf,hf}=symbolicAR[hmat]
+amat=symbolicTransitionMatrix[hf]
+
+
+{evls,evcs}=Eigensystem[Transpose[amat]]
+
+
+(*
+bigHmat=ArrayFlatten[{{G1,G0,F1}}];
+
+{zf,hf}=symbolicAR[hmat]
+amat=symbolicTransitionMatrix[hf]
+{evls,evcs}=Eigensystem[Transpose[amat]]
+
+
+*)
+
+
+pre= Expand[zz*(F1 *(1/zz) +G0+  G1*zz)](*/.{alpha->1,beta->1,gamma->1}*);
+
+Needs["SmithFormV6`"]
+
+
+{snf,{uu,vv}}=PolynomialSmithForm[pre,zz]//FullSimplify
+
+
+(uu.pre.vv) - snf//Simplify;
+
+(uuInv=Inverse[uu]).snf .(vvInv=Inverse[vv]) -pre//Simplify;
+(**)
+
+
+
+allTheFacs=Factor /@Diagonal[snf];
+
+ssRoots=Roots[#==0,zz]&/@Diagonal[snf]
+
+{preMult,{rootEqns,otherMults}}=procFacs[allTheFacs[[2]],2,2]
+
+
+
+jr=justRights[rootEqns]
+ha=genCons[jr]
+
+
+TeXTableForm[hmat,1,"hmat.tex",TableBegin->"\\begin{tabular}{|cccccc|}\n"]
+TeXTableForm[{evls},1,"evls.tex",TableBegin->"\\begin{tabular}{|cccc|}\n"]
+
+
+
+cases=FullSimplify[ha,Assumptions->Element[{alpha,beta,gamma},Reals]&&0<beta<1]
+C0={{c011,c012},{c021,c022}};
+
+
+
+
+(*their case 1*)
+
+
+
+(*right others misleading*)
+(uuInv=Inverse[uu]).snf .(vvInv=Inverse[vv]) -pre//Simplify;
+((SCase1=(uuInv .otherMults[[1]])) . 
+(TCase1=(Dot@@ otherMults[[{2,3}]]. preMult.vvInv))) - pre//Simplify
+UTildeCase1= (ProdCase1=(Times @@ Diagonal[otherMults[[1]]])) *Inverse[SCase1]//FullSimplify
+
+bigACase1=UTildeCase1 . (zz*(psi0 +psi1 * zz));
+bigRCase1=UTildeCase1 . F1 . Piy1;
+bigQCase1= F1 . Piy1;
+
+paperSubs={zz->z};
+TeXTableForm[F1,1,"F1$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[G0,1,"G0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[G1,1,"G1$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[AA,1,"AA$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[phi,1,"phi0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[psi0,1,"psi0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[psi1,1,"psi1$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[pre/.paperSubs//FullSimplify,1,"pre$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[snf/.paperSubs//FullSimplify,1,"snf$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[uu/.paperSubs//FullSimplify,1,"uu$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[vv/.paperSubs//FullSimplify,1,"vv$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+TeXTableForm[jr,3,"jr$42.tex",TableBegin->"\\begin{tabular}{|cccccl|}\n"]
+
+TeXTableForm[UTildeCase1/.paperSubs//FullSimplify,1,"UTilde1$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[UTildeCase1/.zz->0//FullSimplify,1,"UTilde1Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+TeXTableForm[bigACase1/.paperSubs//FullSimplify,1,"bigA1$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigRCase1/.paperSubs//FullSimplify,1,"bigR1$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigQCase1//FullSimplify,1,"bigQ1$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+TeXTableForm[bigACase1/.zz->0//FullSimplify,1,"bigA1Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigRCase1/.zz->0//FullSimplify,1,"bigR1Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+
+(*their case 2*)
+
+(*right others misleading*)
+(uuInv=Inverse[uu]).snf .(vvInv=Inverse[vv]) -pre//Simplify;
+((SCase2=(uuInv .(forS=Dot @@ otherMults[[{1,2}]]))) . 
+(TCase2=(otherMults[[3]]. preMult.vvInv))) - pre//Simplify
+UTildeCase2= (ProdCase2=(Times @@ Diagonal[forS])) *Inverse[SCase2]//FullSimplify
+
+bigACase2=UTildeCase2 . (zz*(psi0 +psi1 * zz));
+bigRCase2=UTildeCase2 . F1 . Piy1;
+bigQCase2= F1 . Piy1;
+
+cmat={{c011,c012},{c021,c022}};
+eqnsCase2=Flatten[Solve[Flatten[DeleteCases[
+Thread[Flatten[-bigRCase2 . cmat] == Flatten[bigACase2]]/.zz->{1/alpha}//FullSimplify,True]],Flatten[cmat]]];
+
+bigCCase2=(1/ProdCase2)*Inverse[TCase2] .(UTildeCase2 . (zz*(psi0 +psi1 * zz)+
+ F1 . Piy1. cmat/.eqnsCase2))//FullSimplify;
+
+bigCSeriesCase2=Map[convertToSeries,bigCCase2,{2}]//FullSimplify
+theMat=bigCSeriesCase2;
+
+
+bigC2$0=Map[pairToCk[#,0]&,bigCSeriesCase2,{2}];
+bigC2$1=Map[pairToCk[#,1]&,bigCSeriesCase2,{2}];
+bigC2$2=Map[pairToCk[#,2]&,bigCSeriesCase2,{2}];
+
+matForYtYtp1=ArrayFlatten[
+{{ConstantArray[0,{2,2}],ConstantArray[0,{2,2}],ConstantArray[0,{2,2}]},
+{bigC2$1,bigC2$0,ConstantArray[0,{2,2}]},
+{bigC2$2,bigC2$1,bigC2$0}}];
+
+
+ytYtp1=matForYtYtp1 . {{thtm1},{psitm1},{tht},{psit},{thtp1},{psitp1}};
+
+Splice["bigCSeries.mtex","bigCSeries2$42.tex"]
+
+
+(*case 2 alpha > 1*)
+qmat2=Join[zf,evcs[[{3}]]]
+{bmat2,phimat2,fmat2}=symbolicComputeBPhiF[hmat,qmat2]//FullSimplify
+
+lagSubs={mpsi11->0,mpsi13->1,mpsi12->0,mpsi13->0,mpsi14->0,
+mpsi21->1/beta,mpsi22->0,mpsi23->0,mpsi24->-(1/beta-1)}
+
+x2tm1=0*phimat2. myPsi.{{thtm1},{psitm1},{0},{0}}/.lagSubs;
+x2t=bmat2. x2tm1+ phimat2. myPsi.{{thtm1},{pstm1},{tht},{psit}}/.lagSubs; 
+x2tp1=bmat2.x2t+phimat2. myPsi.{{tht},{psi2},{0},{0}}/.lagSubs;
+
+bigX2tm1=ArrayFlatten[{{x2tm1}*0,{x2tm1},{x2t}}]
+bigX2t=ArrayFlatten[{{x2tm1},{x2t},{x2tp1}}]
+
+etm1xt=phimat2. myPsi.{{thtm1},{pstm1},{0},{0}}/.lagSubs; 
+x2t-phimat2. myPsi.{{thtm1},{pstm1},{0},{0}}/.lagSubs 
+
+etm1xtp1=x2tp1/.{tht->0,psit->0}
+x2tp1-etm1xtp1
+x2t-phimat2. myPsi.{{thtm1},{pstm1},{0},{0}}/.lagSubs 
+(*
+gives impulse response
+same as the Wold
+
+
+hmat . bigX2t produces the correct values for weights on rhs  errors
+*)
+
+bmat2.phimat2. myPsi.{{0},{0},{thtm1},{0}} +phimat2. myPsi.{{tht},{pst},{0},{0}}/.lagSubs//Simplify
+
+
+bmat2.phimat2. myPsi.{{thtm1},{0},{0},{0}} +
+phimat2. myPsi.{{tht},{pst},{thtm1},{0}} + 
+fmat2 . phimat2. myPsi.{{0},{0},{tht},{0}}/.lagSubs//Simplify/.lagSubs//Simplify
+
+
+
+(*plug solutions in to equations*)
+
+
+
+
+
+TeXTableForm[UTildeCase2/.paperSubs//FullSimplify,1,"UTilde2$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[UTildeCase2/.zz->(1/alpha)//FullSimplify,1,"UTilde1Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+TeXTableForm[bigQCase2//FullSimplify,1,"bigQ2$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+TeXTableForm[bigACase2/.paperSubs//FullSimplify,1,"bigA2$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigRCase2/.paperSubs//FullSimplify,1,"bigR2$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+
+
+TeXTableForm[bigACase2/.zz->(0)//FullSimplify,1,"bigA21Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigRCase2/.zz->(0)//FullSimplify,1,"bigR21Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+TeXTableForm[bigACase2/.zz->(1/alpha)//FullSimplify,1,"bigA22Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigRCase2/.zz->(1/alpha)//FullSimplify,1,"bigR22Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+
+TeXTableForm[eqnsCase2,1,"eqnsCase2.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigCCase2/.paperSubs,1,"bigCCase2.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+TeXTableForm[bmat2,1,"bmat2$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[phimat2,1,"phimat2$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[fmat2,1,"fmat2$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+(*
+(*their case 3*)
+
+(*right others misleading*)
+(uuInv=Inverse[uu]).snf .(vvInv=Inverse[vv]) -pre//Simplify;
+((SCase3=(uuInv .(forS=Dot @@ otherMults[[{1,3}]]))) . 
+(TCase3=(otherMults[[2]]. preMult.vvInv))) - pre//Simplify
+UTildeCase3= (ProdCase3=(Times @@ Diagonal[forS])) *Inverse[SCase3]//FullSimplify
+
+bigACase3=UTildeCase3 . (zz*(psi0 +psi1 * zz));
+bigRCase3=UTildeCase3 . F1 . Piy1;
+bigQCase3= F1 . Piy1;
+
+cmat={{c011,c012},{c021,c022}};
+eqnsCase3=Flatten[Solve[Flatten[DeleteCases[
+Thread[Flatten[-bigRCase3 . cmat] == Flatten[bigACase3]]/.zz->{jr[[3]]}//FullSimplify,True]],Flatten[cmat]]];
+
+bigCCase3=(1/ProdCase3)*Inverse[TCase3] .(UTildeCase3 . (zz*(psi0 +psi1 * zz)+
+ F1 . Piy1. cmat/.eqnsCase3))//FullSimplify;
+
+bigCSeriesCase3=Map[convertToSeries,bigCCase3,{2}]//FullSimplify
+theMat=bigCSeriesCase3;
+Splice["bigCSeries.mtex","bigCSeries3$42.tex"]
+
+
+
+
+
+(*case 3 alpha > 1*)
+qmat3=Join[zf,evcs[[{3}]]]
+{bmat3,phimat3,fmat3}=symbolicComputeBPhiF[hmat,qmat3]//FullSimplify
+
+lagSubs={mpsi11->1,mpsi12->0,mpsi13->0,mpsi21->0,mpsi22->-(1/beta-1),mpsi23->1/beta}
+
+bmat3.phimat3. myPsi.{{0},{0},{thtm1}} +phimat3. myPsi.{{tht},{pst},{0}}/.lagSubs//Simplify
+
+
+
+TeXTableForm[UTildeCase3/.paperSubs//FullSimplify,1,"UTilde3$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[UTildeCase3/.zz->(jr[[3]])//FullSimplify,1,"UTilde1Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+TeXTableForm[bigQCase3//FullSimplify,1,"bigQ3$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+TeXTableForm[bigACase3/.paperSubs//FullSimplify,1,"bigA3$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigRCase3/.paperSubs//FullSimplify,1,"bigR3$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+
+
+TeXTableForm[bigACase3/.zz->(0)//FullSimplify,1,"bigA31Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigRCase3/.zz->(0)//FullSimplify,1,"bigR31Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+TeXTableForm[bigACase3/.zz->(jr[[3]])//FullSimplify,1,"bigA32Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigRCase3/.zz->(jr[[3]])//FullSimplify,1,"bigR32Z0$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+
+TeXTableForm[eqnsCase3,1,"eqnsCase3.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[bigCCase3/.paperSubs,1,"bigCCase3.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+TeXTableForm[bmat3,1,"bmat3$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[phimat3,1,"phimat3$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+TeXTableForm[fmat3,1,"fmat3$42.tex",TableBegin->"\\begin{tabular}{|cc|}\n"]
+
+
+*)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Run["pdflatex tanWalkerJEDCReview"]
+
+
+
+
+
