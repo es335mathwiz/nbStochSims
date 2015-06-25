@@ -1,53 +1,13 @@
 \documentclass[12pt]{article}
+\usepackage{color}
 \usepackage{hyperref}
+\newcommand{\ppr}{\large \bf \color{blue} PAPER}
 \begin{document}
-\begin{description}
-\item[-- 3 -- Mehmet Soytas Ozyegin University (s)
-Engin Volkan Istanbul Bilgi University
-] 
-\begin{abstract}
-  This paper aims to apply the Hotz-Miller estimation technique (Hotz and Miller (1993))- often used in applied microeconometrics literature- to sovereign default models. Using the fixed-point theorem, sovereign default models are solved by numerical value function iteration and calibration methods, which due to their computational constraints, greatly limits the models' quantitative performance and completely foregoes its quantitative projection ability. Hotz-Miller technique estimates the structural parameter values of recursive competitive general equilibrium models with discrete choice, given the actual probability of the (discrete) endogenous choice extracted from real-time data. In this paper, by reverse engineering the technique, given the structural parameter values estimated from business-cycle models, the unknown ex-ante default probability of economies will be estimated. By applying Hotz-Miller technique to sovereign default models, the computational constraints of the xed-point theorem will be bypassed, the quantitative inference ability of these models will be improved, and these models' country-based quantitative projection ability will be obtained.
-\end{abstract}
-\item[--11--  hsihchia hsieh; providence un
-  "Finance Stress, Income Inequality, and Unemployment:" ] \ 
 
-  \begin{abstract}
-    . Dynamic general equilibrium is a unique unbiased and consistent test statistic and regulatory standards. Method of computation is non-deterministic polynomials (NP). Result is an evolution-wave equation. The unique index is a non-zero dynamic equilibrium policy. Below or beyond the equilibrium, the correlation and the variances are sign-changing. Data verify that dynamic equilibrium is the switching policy in Taiwan and is an exchange rate of invertible inequality, which is competitive among n countries, including the US and Europe.
-  \end{abstract}
-\href{file://papers_CEF2015[1]/paper_11.pdf}{paper}
+\section{Heterogeneous Agents}
+  \begin{description}
 
-\item[--15-- 2014-12-28 15:54:18 
-Authors Junior Maih; Norges Bank  "Efficient Perturbation Methods for Solving Switching DSGE Models" 
-] \ 
-\begin{abstract}
-In this paper we present a framework for solving switching nonlinear dynamic stochastic general equilibrium (DSGE) models. In our approach, the probability of switching can be endogenous and agents may react to anticipated events. The solution algorithms derived are suitable for solving large systems. They use a perturbation strategy which, unlike Foerster et al. (2014), does not rely on the partitioning of the switching parameters and is therefore more efficient. The algorithms presented are all implemented in RISE, an object-oriented toolbox that is flexible and can easily integrate alternative solution methods. We apply our algorithms to and can replicate various examples found in the literature. Among those examples is a switching RBC model for which we present a third-order perturbation solution. 
-  
-\end{abstract}
 
-\item[--45-- Hwan C. Lin; University of North Carolina at Charlotte
-Larry Shampine; Southern Methodist University  "Finite-length Patents and Functional Differential Equations in a Non-scale R\&D-based Growth Model" 
-] 
-\begin{abstract}
-  The statutory patent length is 20 years in most countries. R\&D-based endogenous growth models, 
-however, often presume an infinite patent length. In this paper, finite-length patents are embedded in a non-scale R\&D-based growth model, but any patent’s effective life may be terminated prematurely at any moment, subject to two idiosyncratic hazards of imitation and innovation. This gives rise to an autonomous system of mixed-type functional differential equations (FDEs). Its dynamics are driven by current, delayed and advanced states. We present an algorithm to solve the FDEs by solving a sequence of standard BVPs (boundary value problems) for systems of ODEs (ordinary differential equations). We use this algorithm to simulate a calibrated U.S. economy’s transitional dynamics by making discrete changes from the baseline 20 years patent length. We find that if transitional impacts are taken into account, optimizing the patent length incurs a welfare loss, albeit rather small. This suggests that fine-tuning the world’s patent systems may not be a worthwhile effort.
-\end{abstract}
-\href{file://papers_CEF2015[1]/paper_45.pdf}{paper}
-\item[--132-- Joao Bastos; ISEG/UTL
-Joaquim Ramalho; Universidade de Evora  "Nonparametric models of financial leverage decisions" 
-] 
-\begin{abstract}
-  This paper applies nonparametric decision tree models to the analysis of financial leverage decisions. This approach presents three appealing features: (i) the relationship between leverage and explanatory variables is not predetermined but is derived from information provided by the data; (ii) the models respect the fractional nature of leverage ratios; and (iii) each covariate is allowed to influence in different ways the financial leverage decisions of firms automatically assigned to different groups. Based on a data set of Portuguese firms, decision trees are used to tackle both classification (the decision to issue debt) and regression (the decision on the amount of debt to be issued, conditional on using debt) problems. It is found that: (i) two-part models are the most appropriate specification for explaining the overall amount of debt used by firms; (ii) there are no drastic differences between the results produced by tree and parametric models, although some divergences may arise; and (iii) tree models suggest relationships between covariates and leverage that parametric models fail to capture, especially when the sample size is small.
-\end{abstract}
-
-\href{file://papers_CEF2015[1]/paper_132.pdf}{paper}
-\item --167-- Elisabeth Pröhl; Univ. of Geneva, Swiss Finance Institute
-"Computing the Cross-Sectional Distriebution to Approximate Stationary Markov Equilibria with Heterogeneous Agents and Incomplete Markets"
-\begin{abstract}
-  Dynamic stochastic general equilibrium models with heterogeneous agents and incomplete markets usually possess no closed-form solutions. Therefore, it is important to have robust algorithms which produce reliable numerical solutions to such models. Most existing algorithms approximate the law of motion of aggregate state variables parametrically using a limited number of moments of the cross-sectional distribution. None of these algorithms, however, takes full advantage of the stationary state distribution of such equilibria. 
-In this paper, a computable expression for the exact law of motion is introduced. The law of motion transforms the state distribution according to how the agents optimally respond to exogenous shocks. It produces a state variable distribution which is implied by the policy functions and leads to the stationary state distribution of the Markov equilibrium. Furthermore, in exploiting the concept of the ergodic state distribution, it becomes apparent that there is a clear distinction between models with a continuum of agents and models with finitely many agents. Therefore, I derive distinct solution procedures for these two cases. Moreover, the algorithm which is based on projection methods is shown to converge. The algorithm is used to solve the Krusell and Smith (1998) model for a continuum of agents as well as for finitely many agents and indeed, a Markov equilibrium with an ergodic state distribution is produced. The most striking result when comparing the solutions for different numbers of agents is the widening gap between rich and poor as the number of agents decreases. Finally, the introduced methodology makes it possible to investigate the well-known approximation and convergence issues of some existing algorithms, most prominently the Krusell-Smith algorithm. It is shown why these algorithms do not converge under certain circumstances. These issues are exemplified by comparing the numerical results of the Krusell-Smith algorithm and my algorithm.
-\end{abstract}
-
-\href{file://papers_CEF2015[1]/paper_167.pdf}{paper}
 \item[--244-- Robert Kirkby
   "Value Function Iteration on the GPU: A Matlab Toolkit" ] 
   \begin{abstract}
@@ -56,31 +16,118 @@ For an idea of what this looks like for the user see the following two notebooks
 of the Toolkit for VFI problems are: can change parameters or functional forms, fast (as on GPU), and user needn't understand parallelization on GPU. The algorithm is based on discretization and is therefore also very robust. The robustness and ease of VFI with the Toolkit makes it appropriate as an easy way to double-check results when writing codes for more sophisticated numerical methods. The VFI Toolkit can be used as the basis for solving more complex models. I have used it for solving general equilibrium heterogeneous agent model (like Huggett (1993) or Aiyagari (1994)) and in related work I prove that it’s algorithms will converge to the true solution of Bewley-Huggett-Aiyagari models ( \href{https://www.dropbox.com/s/o6jitma8yurkn3c/RobertKirkby_Computation_HeteroAgents.pdf?dl=0}{pdf} ). I have also used it to perform simulated moments estimation of such models.
   \end{abstract}
 
-\href{file://papers_CEF2015[1]/paper_244.pdf}{paper}
-\item[--277-- Oliver de Groot; Federal Reserve Board
-  "Global v. Local Methods in the Quantitative Analysis of Open-Economy Models with Incomplete Markets"] 
+\href{file://papers_CEF2015[1]/paper_244.pdf}{\ppr}
+
+
+\item[--524-- Andrew McCallum; Federal Reserve Board] 
   \begin{abstract}
-    Two classes of numerical methods are widely used in International Macroeconomics to study incomplete markets models in which the dynamics of wealth distribution are state contingent, and the limiting distribution of wealth is influenced by precautionary savings behavior that induces large deviations from certainty equivalence. One class introduces assumptions that impose a unique deterministic steady state and uses local perturbation methods. The second solves directly for the stochastic steady state using global methods. We compare the solutions of canonical small open economy models produced by log-linear, second-order, and risk-adjusted steady state local methods assuming a debt-elastic world interest rate against those obtained using two global methods: A Bewley method with standard preferences and an interest rate lower than the rate of time preference, and an Uzawa-Epstein method with an endogenous rate of time preference. Comparing results in both the time and frequency domains yields two main findings. First, local methods produce good approximations only if they are calibrated using information from the global solutions. Second, even in this case they cannot approximate well all of the results of the global methods. These findings suggest caution in interpreting results obtained with local methods, and favor using global methods except when the curse of dimensionality makes them impractical.
+    Heterogeneous firm models of international trade include a country specific sunk cost that firms pay to enter a foreign market. Despite the important role these costs play in determining firm participation, we understand little about their structure. In particular, we do not know if there are country complementarities or general exporting experience components in entry costs. Characterizing the structure of sunk entry costs relies on careful identification of state dependence conditional on heterogeneity. I employ reduced form and structural approaches and a confidential panel of U.S. manufacturers' exporting behavior to the top 50 destinations 1992-2007 to conclude that export entry costs are mainly country specific. The structural model allows me to estimate that the global entry cost is \$20 thousand while country specific entry costs are \$3.7 million for Canada, \$4.16 million for Japan, \$3.58 million for Mexico, \$4.22 million for the United Kingdom, and \$3.63 million for Germany. 
   \end{abstract}
 
-\href{file://papers_CEF2015[1]/paper_277.pdf}{paper}
+\href{file:papers_CEF2015[1]/paper_524.pdf}{\ppr}
+
+\item[--523-- Christopher Carroll; The Johns Hopkins University
+Nathan Palmer; George Mason University  "The Heterogeneous-Agent CompumetriK Toolkit: An Extensible Framework for Solving and Estimating Hetergeneous-Agent Models" ] 
+\begin{abstract}
+  We present a modular and extensible toolkit for solving and estimating heterogeneous-agent general-equilibrium models. Heterogeneous-agent models have grown increasingly valuable for both policy and research purposes, but code to solve such models can be difficult to penetrate for researchers new to the topic. As a result it may take years of human capital development for researchers to become proficient in these methods and contribute to the literature. The goal of the HACK toolkit is to ease this burden by providing a simple and easily extensible framework in which a few common models are solved, and clear documentation, testing, and estimation frameworks provide guidance for new researchers to develop their own work in a robust and replicable manner. Using two examples, we outline key elements of the toolkit which ease the burden of learning, using, and contributing to the codebase. This includes a simple API for model solution and an API for estimation via simulation, as well as methods for bundling working code with interactive documentation. The foundational solution method we employ is Carroll (2012), "Solution Methods for Microeconomic Dynamic Stochastic Optimization Problems," written in a modular Python framework. We briefly discuss a number of extensions as well as tertiary projects implied by this effort.
+\end{abstract}
+
+\href{file:papers_CEF2015[1]/paper_523.pdf}{\ppr}
+
+
+\item[ --167-- Elisabeth Pröhl; Univ. of Geneva, Swiss Finance Institute
+"Computing the Cross-Sectional Distriebution to Approximate Stationary Markov Equilibria with Heterogeneous Agents and Incomplete Markets"]
+\begin{abstract}
+  Dynamic stochastic general equilibrium models with heterogeneous agents and incomplete markets usually possess no closed-form solutions. Therefore, it is important to have robust algorithms which produce reliable numerical solutions to such models. Most existing algorithms approximate the law of motion of aggregate state variables parametrically using a limited number of moments of the cross-sectional distribution. None of these algorithms, however, takes full advantage of the stationary state distribution of such equilibria. 
+In this paper, a computable expression for the exact law of motion is introduced. The law of motion transforms the state distribution according to how the agents optimally respond to exogenous shocks. It produces a state variable distribution which is implied by the policy functions and leads to the stationary state distribution of the Markov equilibrium. Furthermore, in exploiting the concept of the ergodic state distribution, it becomes apparent that there is a clear distinction between models with a continuum of agents and models with finitely many agents. Therefore, I derive distinct solution procedures for these two cases. Moreover, the algorithm which is based on projection methods is shown to converge. The algorithm is used to solve the Krusell and Smith (1998) model for a continuum of agents as well as for finitely many agents and indeed, a Markov equilibrium with an ergodic state distribution is produced. The most striking result when comparing the solutions for different numbers of agents is the widening gap between rich and poor as the number of agents decreases. Finally, the introduced methodology makes it possible to investigate the well-known approximation and convergence issues of some existing algorithms, most prominently the Krusell-Smith algorithm. It is shown why these algorithms do not converge under certain circumstances. These issues are exemplified by comparing the numerical results of the Krusell-Smith algorithm and my algorithm.
+\end{abstract}
+
+\href{file://papers_CEF2015[1]/paper_167.pdf}{\ppr}
+
+  \end{description}
+
+
+\section{Trading}
+  \begin{description}
+\item[--520-- German Creamer; Stevens Institute of Technology
+  "Non-linear forecasting of energy futures: Oil, coal and natural gas" ] 
+  \begin{abstract}
+    This paper proposes the combination of Brownian distance correlation for feature selection, and for random forest for regression to forecast energy prices. 
+Brownian distance correlation determines relationships similar to those identified by the linear Granger causality test, and it also uncovers additional non-linear relationships among the log prices of oil, coal, and natural gas. During the complete period 2006-2012, oil and coal show a two-way feedback relationship according to the Brownian distance. Coal also Granger causes gas. Most of the additional relationships observed using the Brownian distance test, which were not recognized by the Granger causality test, were confirmed to be relevant non-linear relationships according to the White and Terasvirta tests. Hence, the Brownian distance correlation recognizes a number of important dependencies, some of which are confirmed by the Granger causality test and some, such as the effect of crude oil on natural gas, have been explored before. Most of the relationships discussed above still hold using only 70% of the observations of each period. The variables with relevant lags are used to build the random forest models that forecast the energy futures prices for the out of sample group for each period. 4 out of 6 models built with variables selected by the Brownian distance correlation have a significantly better fit than models based on variables selected by the Granger causality. The other 2 cases are not significantly different. This improvement in the forecast of energy futures prices validates the relevance of the nonlinear relationships uncovered by the Brownian distance correlation. In conclusion, when these linear and non-linear relationships are used to forecast energy futures with a non-linear regression method such as random forest for regression, the forecast of energy futures improve substantially. 
+  \end{abstract}
+
+\item[--403-- Kaihua Deng; University of Washington  "Another Look at Large-Cap Stock Return Comovement: A Semi- Markov-Switching Approach" ] 
+  \begin{abstract}
+    This paper revisits the question of how large-cap stock return comovement varies with volatility and market returns. I propose the use of an eigenvalue-based measure of comovement in a multivariate semi-Markov-switching framework. I conduct various model evaluation checks and compare the new results with that based on a benchmark. I estimate models with two to four regimes and consider the impact of sample selection and outlier reduction. Contrary to the sweeping sentiment that comovement is highest when market is down and volatile, I illustrate the significance of comovement differential across states and find in most case studies evidence that suggests otherwise.
+  \end{abstract}
+
+\href{file://papers_CEF2015[1]/paper_403.pdf}{\ppr}
+
+
+\item[--339-- estathak Efthymios Stathakis, Democritus University of Thrace "Using Extreme Value Theory and Support Vector Machines to model and forecast the occurrence of extreme prices in the German electricity market"] 
+  \begin{abstract}
+    In this paper, employing high-frequency data from the German EPEXSpot electricity market we develop a model to forecast the occurrence of spikes (positive and negative) in the natural logarithmic returns of the hourly electricity prices. The analytical framework we use to model the extreme behavior of the intraday electricity prices is the Extreme Value Theory (EVT). The empirical model we employ to forecast the occurrence of spikes in the return series is the Support Vector Machines (SVMs).
+  \end{abstract}
+
+\href{file://papers_CEF2015[1]/paper_339.pdf}{\ppr}
+
 \item[--284-- PoYuan Shih
 "A decision support model with ensemble classifier for stock trading signal detection"] 
 
 \begin{abstract}
   Stock trading signal detection has become a very popular research topic and it also is an important tool for investors in financial investment. Most researches focus on the precise price prediction only; however, determining trading points may be more important than price prediction in decision making. This paper proposed a novel approach by using principal component analyze to discover the relationships between various technical indicators, and using data mining methods with ensemble classifier to explore the trading signals hidden in historical data. Experimental results show that our proposed decision support model by using ensemble classifier has a better return than others on stock investment.
 \end{abstract}
-\item[--315-- Michel Juillard; Banque de France  "Extended-path algorithms in Dynare" ] 
+
+
+  \end{description}
+
+\section{Financial Stress }
+  \begin{description}
+
+\item[-- 3 -- Mehmet Soytas Ozyegin University (s)
+Engin Volkan Istanbul Bilgi University
+] 
+\begin{abstract}
+  This paper aims to apply the Hotz-Miller estimation technique (Hotz and Miller (1993))- often used in applied microeconometrics literature- to sovereign default models. Using the fixed-point theorem, sovereign default models are solved by numerical value function iteration and calibration methods, which due to their computational constraints, greatly limits the models' quantitative performance and completely foregoes its quantitative projection ability. Hotz-Miller technique estimates the structural parameter values of recursive competitive general equilibrium models with discrete choice, given the actual probability of the (discrete) endogenous choice extracted from real-time data. In this paper, by reverse engineering the technique, given the structural parameter values estimated from business-cycle models, the unknown ex-ante default probability of economies will be estimated. By applying Hotz-Miller technique to sovereign default models, the computational constraints of the xed-point theorem will be bypassed, the quantitative inference ability of these models will be improved, and these models' country-based quantitative projection ability will be obtained.
+\end{abstract}
+
+\item[--547-- Christian Hoffmann; University of St. Gallen
+Jann Mueller; University College London
+"Logic-based Assessment of Extreme Financial Risks – A Plea in favor of the Known"] 
+\begin{abstract}
+  In the wake of the financial crisis that began in 2007, there is increasing recognition of the need to address risk at the systemic level, instead of exclusively focusing on individual risk silos (such as market or credit risk). Conventional quantitative risk management in banking, characterized by risk categorization and by probability-based risk measures (Value-at-Risk, Expected Shortfall), produces its own risks, generated through an inadequate notion of risk which lacks a systemic viewpoint. It is time to acknowledge the ineffectiveness of standard probabilistic risk modeling for dealing with the kind of low-probability, high-impact events that characterize systemic risk. 
+We present a kind of risk model which is novel on two accounts. Firstly, in contrast to standard risk modeling approaches used by banks, our proposal relies on a precise model of what is known (one’s own assets and liabilities) rather than a spuriously precise model of what is not known (minimum or expected losses). Secondly, in contrast to risk models aimed at regulators who analyze systemic risk in order to preserve financial stability, our objective is not to model the entire financial system, but market participants’ own positions and their potential reaction to outside changes. We illustrate our plea for symbolic and logic-based risk modeling with the example of a credit crisis. This use case demonstrates two key ideas: That financial instruments in our language are interpreted as sequences of transactions rather than as single values (or probability distributions), and that the valuation of a complex contract depends only on the valuations of the simpler contracts it consists of. While the latter idea lies at the heart of functional programming, the former idea has not been applied to contract valuations before. This paper seeks to close this gap and to provide a new tool for assessing extreme financial risks effectively.
+\end{abstract}
+
+\item[--512-- mikhailoet  Mikhail Oet, Case Western Reserve University, Federal Reserve Bank of Cleveland
+  "Financial system stress: From empirical validity to theoretical foundations" ] 
+
   \begin{abstract}
-    Recent developments in macroeconomics focus more and more on 
-nonlinearities that are very difficult to address with usual local approximation methods. Efficient methods exist to solve efficiently perfect foresight models, even very large ones. It should now be clear to everyone that the difficulty resides in taking into account the current effects of future uncertainty in a nonlinear model. Several papers have tried to address this issue by combining very accurate methods for the deterministic part of the nonlinear model and various approximation schemes for the effects of future uncertainty. The Dynare \emph{extended path} module attempts to package in a systematic manner several of these approaches. Fair and Taylor (1983) suggest to ignore Jensen's inequality and replace future random shocks by their mean. Evers(2012) and Ajevskis (2014) propose a perturbation approach in the neighborhood of the perfect foresight solution. Adjemian and Juillard (2013) use a quadrature formula to approximate the conditional expectation of the model over the next periods and suggest a correction inspired from perturbation analysis. An example is used to compare accuracy of the various alternative and their advantages and shortcomings. 
-  \end{abstract}
-\item[--339-- estathak Efthymios Stathakis, Democritus University of Thrace "Using Extreme Value Theory and Support Vector Machines to model and forecast the occurrence of extreme prices in the German electricity market"] 
-  \begin{abstract}
-    In this paper, employing high-frequency data from the German EPEXSpot electricity market we develop a model to forecast the occurrence of spikes (positive and negative) in the natural logarithmic returns of the hourly electricity prices. The analytical framework we use to model the extreme behavior of the intraday electricity prices is the Extreme Value Theory (EVT). The empirical model we employ to forecast the occurrence of spikes in the return series is the Support Vector Machines (SVMs).
+    A review of financial system stress measures reveals not only the absence of theory on financial stress, but also the absence of search for theory. This study conducts an empirical analysis of an evolving financial system to construct a concise set of latent factors that condition financial stress. The empirical analysis parses out maximum likelihood factors utilizing longitudinal exploratory factor analysis, highlighting a number of problems with a priori stress construction. The resulting stress measurement model is tested via confirmatory factor analysis and substantiated for convergent, discriminant, and predictive validity. We test the hypotheses of association and causality between the factors, their variables, and financial stress for an evolving financial system using financial market observations and the Financial Accounts of the United States from 1991 to 2014. The analytical insights lead to an extension of financial stress measurement for system agents and instruments. The empirical validity also leads us to posit a new theoretical foundation for a deeper understanding of financial stress—one that can adapt to continual changes in financial system structure and instruments.
   \end{abstract}
 
-\href{file://papers_CEF2015[1]/paper_339.pdf}{paper}
+\href{file://papers_CEF2015[1]/paper_512.pdf}{\ppr}
+
+\item[--412-- Daeyup Lee; Bank of Korea       "Rare Disasters on Financial Markets and Policy Responses"]
+  \begin{abstract}
+    This paper develops a new Keynesian small open economy model incorporating a time-varying 
+financial disaster risk that financial intermediaries in the economy experience rare but disastrous net-worth shocks originating from foreign sectors. A global solution method based on Chebyshev spectral method is employed to tackle large shocks and occasionally binding constraints in the model. In particular, a Smolyak collocation method is applied to solve the model with a sizable number of state variables. The paper also investigates time-varying relative effectiveness of several policies including monetary policy and credit policy in dealing with such tail risks as financial development in the economy proceeds.
+  \end{abstract}
+
+
+  \end{description}
+
+\section{Nonlinear Solution Methods}
+  \begin{description}
+
+  \item[--419-- judd  Kenneth Judd, Hoover Institution
+smaliar  Serguei Maliar, Santa Clara University
+"Lower Bounds on Approximation Errors: Testing the Hypothesis That a Numerical Solution Is Accurate " ] 
+\begin{abstract}
+  We propose a novel methodology for evaluating the accuracy of numerical solutions to dynamic economic models. Specifically, we construct a lower bound on the size of approximation errors. A small lower bound on errors is a necessary condition for accuracy: If a lower error bound is unacceptably large, then the actual approximation errors are even larger, and hence, we reject the hypothesis that a numerical solution is accurate. Our accuracy analysis is logically equivalent to hypothesis testing in statistics. As an illustration of our methodology, we assess approximation errors in the first- and second-order perturbation solutions for two stylized models: a neoclassical growth model and a new Keynesian model. The errors are small for the former model but unacceptably large for the latter model under some empirically relevant parameterizations.
+\end{abstract}
+
+
 \item[--364-- Koen Vermeylen; University of Amsterdam "Probability perturbations"] 
   \begin{abstract}
     This paper proposes a new way to take Taylor approximations of discrete-time rational expectations models, which I call probability perturbations: instead of approximating a model around a steady state where the effect of a stochastic shock on the economy is zero for all possible draws from its probability distribution (as is the case with traditional perturbations), I approximate the model around a steady state where the probability distribution of the stochastic shocks is degenerate such that the shock itself is always equal to zero with probability one. In this way, even first-order perturbations yield a term that reflects the effect of uncertainty on the decision rules. In addition, probability perturbations use information from the complete state-space of the deterministic counterpart of the economy (in contrast with traditional perturbations, where only information from the deterministic steady state is used); as a result, even low-order probability perturbations may capture much of the non-linearities that are missed with traditional perturbations. 
@@ -90,23 +137,32 @@ The key methodological difference between probability perturbations and traditio
   \begin{abstract}
     This paper shows how to apply the formulae in[Anderson, 2010] to compute rational expectations solutions for models linear except for occasionally binding constraints. The formulae facilitate the recursive computation of solutions that honor the constraints for successively longer horizons. The solutions thus computed accommodate the possibility that model trajectories may depart from and re-engage the constraints. The technique is applicable for nonlinear inequality constraints. 
   \end{abstract}
-\item[--403-- Kaihua Deng; University of Washington  "Another Look at Large-Cap Stock Return Comovement: A Semi- Markov-Switching Approach" ] 
+
+\item[--315-- Michel Juillard; Banque de France  "Extended-path algorithms in Dynare" ] 
   \begin{abstract}
-    This paper revisits the question of how large-cap stock return comovement varies with volatility and market returns. I propose the use of an eigenvalue-based measure of comovement in a multivariate semi-Markov-switching framework. I conduct various model evaluation checks and compare the new results with that based on a benchmark. I estimate models with two to four regimes and consider the impact of sample selection and outlier reduction. Contrary to the sweeping sentiment that comovement is highest when market is down and volatile, I illustrate the significance of comovement differential across states and find in most case studies evidence that suggests otherwise.
+    Recent developments in macroeconomics focus more and more on 
+nonlinearities that are very difficult to address with usual local approximation methods. Efficient methods exist to solve efficiently perfect foresight models, even very large ones. It should now be clear to everyone that the difficulty resides in taking into account the current effects of future uncertainty in a nonlinear model. Several papers have tried to address this issue by combining very accurate methods for the deterministic part of the nonlinear model and various approximation schemes for the effects of future uncertainty. The Dynare \emph{extended path} module attempts to package in a systematic manner several of these approaches. Fair and Taylor (1983) suggest to ignore Jensen's inequality and replace future random shocks by their mean. Evers(2012) and Ajevskis (2014) propose a perturbation approach in the neighborhood of the perfect foresight solution. Adjemian and Juillard (2013) use a quadrature formula to approximate the conditional expectation of the model over the next periods and suggest a correction inspired from perturbation analysis. An example is used to compare accuracy of the various alternative and their advantages and shortcomings. 
+  \end{abstract}
+  \end{description}
+
+\section{Nonlinear Solution Methods}
+  \begin{description}
+\item[--277-- Oliver de Groot; Federal Reserve Board
+  "Global v. Local Methods in the Quantitative Analysis of Open-Economy Models with Incomplete Markets"] 
+  \begin{abstract}
+    Two classes of numerical methods are widely used in International Macroeconomics to study incomplete markets models in which the dynamics of wealth distribution are state contingent, and the limiting distribution of wealth is influenced by precautionary savings behavior that induces large deviations from certainty equivalence. One class introduces assumptions that impose a unique deterministic steady state and uses local perturbation methods. The second solves directly for the stochastic steady state using global methods. We compare the solutions of canonical small open economy models produced by log-linear, second-order, and risk-adjusted steady state local methods assuming a debt-elastic world interest rate against those obtained using two global methods: A Bewley method with standard preferences and an interest rate lower than the rate of time preference, and an Uzawa-Epstein method with an endogenous rate of time preference. Comparing results in both the time and frequency domains yields two main findings. First, local methods produce good approximations only if they are calibrated using information from the global solutions. Second, even in this case they cannot approximate well all of the results of the global methods. These findings suggest caution in interpreting results obtained with local methods, and favor using global methods except when the curse of dimensionality makes them impractical.
   \end{abstract}
 
-\href{file://papers_CEF2015[1]/paper_403.pdf}{paper}
+\href{file://papers_CEF2015[1]/paper_277.pdf}{\ppr}
 
-\item[--412-- Daeyup Lee; Bank of Korea       "Rare Disasters on Financial Markets and Policy Responses"]
-  \begin{abstract}
-    This paper develops a new Keynesian small open economy model incorporating a time-varying 
-financial disaster risk that financial intermediaries in the economy experience rare but disastrous net-worth shocks originating from foreign sectors. A global solution method based on Chebyshev spectral method is employed to tackle large shocks and occasionally binding constraints in the model. In particular, a Smolyak collocation method is applied to solve the model with a sizable number of state variables. The paper also investigates time-varying relative effectiveness of several policies including monetary policy and credit policy in dealing with such tail risks as financial development in the economy proceeds.
-  \end{abstract}
-  \item[--419-- judd  Kenneth Judd, Hoover Institution
-smaliar  Serguei Maliar, Santa Clara University
-"Lower Bounds on Approximation Errors: Testing the Hypothesis That a Numerical Solution Is Accurate " ] 
+
+
+\item[--15-- 2014-12-28 15:54:18 
+Authors Junior Maih; Norges Bank  "Efficient Perturbation Methods for Solving Switching DSGE Models" 
+] \ 
 \begin{abstract}
-  We propose a novel methodology for evaluating the accuracy of numerical solutions to dynamic economic models. Specifically, we construct a lower bound on the size of approximation errors. A small lower bound on errors is a necessary condition for accuracy: If a lower error bound is unacceptably large, then the actual approximation errors are even larger, and hence, we reject the hypothesis that a numerical solution is accurate. Our accuracy analysis is logically equivalent to hypothesis testing in statistics. As an illustration of our methodology, we assess approximation errors in the first- and second-order perturbation solutions for two stylized models: a neoclassical growth model and a new Keynesian model. The errors are small for the former model but unacceptably large for the latter model under some empirically relevant parameterizations.
+In this paper we present a framework for solving switching nonlinear dynamic stochastic general equilibrium (DSGE) models. In our approach, the probability of switching can be endogenous and agents may react to anticipated events. The solution algorithms derived are suitable for solving large systems. They use a perturbation strategy which, unlike Foerster et al. (2014), does not rely on the partitioning of the switching parameters and is therefore more efficient. The algorithms presented are all implemented in RISE, an object-oriented toolbox that is flexible and can easily integrate alternative solution methods. We apply our algorithms to and can replicate various examples found in the literature. Among those examples is a switching RBC model for which we present a third-order perturbation solution. 
+  
 \end{abstract}
 \item[--479-- Samuel Palmer; University college London
   "Accelerating Implicit Finite Difference Schemes Using a Hardware Optimized Tridiagonal Solver for FPGAs" ] 
@@ -114,46 +170,59 @@ smaliar  Serguei Maliar, Santa Clara University
     We present the design and implementation of the Thomas algorithm optimized for hardware acceleration on an FPGA. The hardware based algorithm combined with the custom data flow and low level parallelism available in an FPGA reduces the overall complexity from 8N down to 5N serial arithmetic operations and almost halves the overall latency by parallelizing the two costly divisions. Combining this with a data streaming interface, we reduce memory overheads to only 2 N-length vectors per N-tridiagonal system to be solved. The Thomas Core developed allows for multiple independent tridiagonal systems to be continuously solved in parallel, providing an efficient accelerator for many computations. We further analytically investigate the use and limitations of fixed-point arithmetic in our algorithm and describe how the resultant rounding errors can be controlled to meet a specified tolerance level. Finally we present applications for derivatives pricing problems using implicit finite difference schemes on an FPGA accelerated system. 
   \end{abstract}
 
+
+\item[--45-- Hwan C. Lin; University of North Carolina at Charlotte
+Larry Shampine; Southern Methodist University  "Finite-length Patents and Functional Differential Equations in a Non-scale R\&D-based Growth Model" 
+] 
+\begin{abstract}
+  The statutory patent length is 20 years in most countries. R\&D-based endogenous growth models, 
+however, often presume an infinite patent length. In this paper, finite-length patents are embedded in a non-scale R\&D-based growth model, but any patent’s effective life may be terminated prematurely at any moment, subject to two idiosyncratic hazards of imitation and innovation. This gives rise to an autonomous system of mixed-type functional differential equations (FDEs). Its dynamics are driven by current, delayed and advanced states. We present an algorithm to solve the FDEs by solving a sequence of standard BVPs (boundary value problems) for systems of ODEs (ordinary differential equations). We use this algorithm to simulate a calibrated U.S. economy’s transitional dynamics by making discrete changes from the baseline 20 years patent length. We find that if transitional impacts are taken into account, optimizing the patent length incurs a welfare loss, albeit rather small. This suggests that fine-tuning the world’s patent systems may not be a worthwhile effort.
+\end{abstract}
+\href{file://papers_CEF2015[1]/paper_45.pdf}{\ppr}
+
+
+
+
+  \end{description}
+
+
+
+
+
+\section{Undecided}
+  \begin{description}
+\item[--132-- Joao Bastos; ISEG/UTL
+Joaquim Ramalho; Universidade de Evora  "Nonparametric models of financial leverage decisions" 
+] 
+\begin{abstract}
+  This paper applies nonparametric decision tree models to the analysis of financial leverage decisions. This approach presents three appealing features: (i) the relationship between leverage and explanatory variables is not predetermined but is derived from information provided by the data; (ii) the models respect the fractional nature of leverage ratios; and (iii) each covariate is allowed to influence in different ways the financial leverage decisions of firms automatically assigned to different groups. Based on a data set of Portuguese firms, decision trees are used to tackle both classification (the decision to issue debt) and regression (the decision on the amount of debt to be issued, conditional on using debt) problems. It is found that: (i) two-part models are the most appropriate specification for explaining the overall amount of debt used by firms; (ii) there are no drastic differences between the results produced by tree and parametric models, although some divergences may arise; and (iii) tree models suggest relationships between covariates and leverage that parametric models fail to capture, especially when the sample size is small.
+\end{abstract}
+
+\href{file://papers_CEF2015[1]/paper_132.pdf}{\ppr}
+  \end{description}
+
+
+
+
+\section{Rejected}
+  \begin{description}
+  \item[--11--  hsihchia hsieh; providence un
+  "Finance Stress, Income Inequality, and Unemployment:" ] \ 
+
+  \begin{abstract}
+    Objective is to qualify and quantify the finance and population stress as
+inequality, filling the gaps of the first and second-order optimizations. Dynamic general equilibrium is a unique unbiased and consistent test statistic and regulatory standards. Method of computation is non-deterministic polynomials (NP). Result is an evolution-wave equation. The unique index is a non-zero dynamic equilibrium policy. Below or beyond the equilibrium, the correlation and the variances are sign-changing. Data verify that dynamic equilibrium is the switching policy in Taiwan and is an exchange rate of invertible inequality, which is competitive among n countries, including the US and Europe.
+  \end{abstract}
+\href{file://papers_CEF2015[1]/paper_11.pdf}{\ppr}
+
+
+
 \item[--482-- Dan Radut; Specialised Hospital Center of Auxerre
 "Global healthcare computing and the information retrieval in medical economics"] 
 \begin{abstract}
   We live in the information (computing) era. The information is now available from many sources and the computational methods represent an excellent way to retrieve the information desired. Due to the huge flux of information there were created search filters in order to retrieve the relevant/pertinent information. In the field of healthcare, the management and the economical involvement is more and more important. As an exercise in the computing healthcare with regard to the information search in the field of medical economics, this paper présents the main benefits and the direction of healthcare informatics into the future. This paper is an extended discussion with the purpose of describing as best as possible some methods ans results of information retrieval in the field of medical economics, as well as to anticipate some of our future checkpoints along the way. Emphasis is placed on the growing importance of computing information in the field of healthcare, the particular nature of complexity as applied to healthcare information. The medical computing might alleviate many of the healthcare (economical) issues.
 \end{abstract}
-\item[--512-- mikhailoet  Mikhail Oet, Case Western Reserve University, Federal Reserve Bank of Cleveland
-  "Financial system stress: From empirical validity to theoretical foundations" ] 
-
-  \begin{abstract}
-    A review of financial system stress measures reveals not only the absence of theory on financial stress, but also the absence of search for theory. This study conducts an empirical analysis of an evolving financial system to construct a concise set of latent factors that condition financial stress. The empirical analysis parses out maximum likelihood factors utilizing longitudinal exploratory factor analysis, highlighting a number of problems with a priori stress construction. The resulting stress measurement model is tested via confirmatory factor analysis and substantiated for convergent, discriminant, and predictive validity. We test the hypotheses of association and causality between the factors, their variables, and financial stress for an evolving financial system using financial market observations and the Financial Accounts of the United States from 1991 to 2014. The analytical insights lead to an extension of financial stress measurement for system agents and instruments. The empirical validity also leads us to posit a new theoretical foundation for a deeper understanding of financial stress—one that can adapt to continual changes in financial system structure and instruments.
-  \end{abstract}
-
-\href{file://papers_CEF2015[1]/paper_512.pdf}{paper}
-\item[--520-- German Creamer; Stevens Institute of Technology
-  "Non-linear forecasting of energy futures: Oil, coal and natural gas" ] 
-  \begin{abstract}
-    This paper proposes the combination of Brownian distance correlation for feature selection, and for random forest for regression to forecast energy prices. 
-Brownian distance correlation determines relationships similar to those identified by the linear Granger causality test, and it also uncovers additional non-linear relationships among the log prices of oil, coal, and natural gas. During the complete period 2006-2012, oil and coal show a two-way feedback relationship according to the Brownian distance. Coal also Granger causes gas. Most of the additional relationships observed using the Brownian distance test, which were not recognized by the Granger causality test, were confirmed to be relevant non-linear relationships according to the White and Terasvirta tests. Hence, the Brownian distance correlation recognizes a number of important dependencies, some of which are confirmed by the Granger causality test and some, such as the effect of crude oil on natural gas, have been explored before. Most of the relationships discussed above still hold using only 70% of the observations of each period. The variables with relevant lags are used to build the random forest models that forecast the energy futures prices for the out of sample group for each period. 4 out of 6 models built with variables selected by the Brownian distance correlation have a significantly better fit than models based on variables selected by the Granger causality. The other 2 cases are not significantly different. This improvement in the forecast of energy futures prices validates the relevance of the nonlinear relationships uncovered by the Brownian distance correlation. In conclusion, when these linear and non-linear relationships are used to forecast energy futures with a non-linear regression method such as random forest for regression, the forecast of energy futures improve substantially. 
-  \end{abstract}
-\item[--523-- Christopher Carroll; The Johns Hopkins University
-Nathan Palmer; George Mason University  "The Heterogeneous-Agent CompumetriK Toolkit: An Extensible Framework for Solving and Estimating Hetergeneous-Agent Models" ] 
-\begin{abstract}
-  We present a modular and extensible toolkit for solving and estimating heterogeneous-agent general-equilibrium models. Heterogeneous-agent models have grown increasingly valuable for both policy and research purposes, but code to solve such models can be difficult to penetrate for researchers new to the topic. As a result it may take years of human capital development for researchers to become proficient in these methods and contribute to the literature. The goal of the HACK toolkit is to ease this burden by providing a simple and easily extensible framework in which a few common models are solved, and clear documentation, testing, and estimation frameworks provide guidance for new researchers to develop their own work in a robust and replicable manner. Using two examples, we outline key elements of the toolkit which ease the burden of learning, using, and contributing to the codebase. This includes a simple API for model solution and an API for estimation via simulation, as well as methods for bundling working code with interactive documentation. The foundational solution method we employ is Carroll (2012), "Solution Methods for Microeconomic Dynamic Stochastic Optimization Problems," written in a modular Python framework. We briefly discuss a number of extensions as well as tertiary projects implied by this effort.
-\end{abstract}
-
-\href{file:papers_CEF2015[1]/paper_523.pdf}{paper}
-\item[--524-- Andrew McCallum; Federal Reserve Board] 
-  \begin{abstract}
-    Heterogeneous firm models of international trade include a country specific sunk cost that firms pay to enter a foreign market. Despite the important role these costs play in determining firm participation, we understand little about their structure. In particular, we do not know if there are country complementarities or general exporting experience components in entry costs. Characterizing the structure of sunk entry costs relies on careful identification of state dependence conditional on heterogeneity. I employ reduced form and structural approaches and a confidential panel of U.S. manufacturers' exporting behavior to the top 50 destinations 1992-2007 to conclude that export entry costs are mainly country specific. The structural model allows me to estimate that the global entry cost is \$20 thousand while country specific entry costs are \$3.7 million for Canada, \$4.16 million for Japan, \$3.58 million for Mexico, \$4.22 million for the United Kingdom, and \$3.63 million for Germany. 
-  \end{abstract}
-
-\href{file:papers_CEF2015[1]/paper_524.pdf}{paper}
-\item[--547-- Christian Hoffmann; University of St. Gallen
-Jann Mueller; University College London
-"Logic-based Assessment of Extreme Financial Risks – A Plea in favor of the Known"] 
-\begin{abstract}
-  In the wake of the financial crisis that began in 2007, there is increasing recognition of the need to address risk at the systemic level, instead of exclusively focusing on individual risk silos (such as market or credit risk). Conventional quantitative risk management in banking, characterized by risk categorization and by probability-based risk measures (Value-at-Risk, Expected Shortfall), produces its own risks, generated through an inadequate notion of risk which lacks a systemic viewpoint. It is time to acknowledge the ineffectiveness of standard probabilistic risk modeling for dealing with the kind of low-probability, high-impact events that characterize systemic risk. 
-We present a kind of risk model which is novel on two accounts. Firstly, in contrast to standard risk modeling approaches used by banks, our proposal relies on a precise model of what is known (one’s own assets and liabilities) rather than a spuriously precise model of what is not known (minimum or expected losses). Secondly, in contrast to risk models aimed at regulators who analyze systemic risk in order to preserve financial stability, our objective is not to model the entire financial system, but market participants’ own positions and their potential reaction to outside changes. We illustrate our plea for symbolic and logic-based risk modeling with the example of a credit crisis. This use case demonstrates two key ideas: That financial instruments in our language are interpreted as sequences of transactions rather than as single values (or probability distributions), and that the valuation of a complex contract depends only on the valuations of the simpler contracts it consists of. While the latter idea lies at the heart of functional programming, the former idea has not been applied to contract valuations before. This paper seeks to close this gap and to provide a new tool for assessing extreme financial risks effectively.
-\end{abstract}
-\end{description}
+  \end{description}
 
 \appendix
 

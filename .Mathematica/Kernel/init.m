@@ -69,7 +69,7 @@ $eigProjCPath={"/msu/res2/m1gsa00/dynareAntlr/target/test-classes",
 
 
 
-
+(*
 
 (*prep for 2011 sce presentation calcs*)
 prepSCE2011[]:=
@@ -204,3 +204,4 @@ AddToClassPath[
 "/msu/res2/m1gsa00/sce13/",
   "/msu/res1/Software/mavenRepositories/tryRep/gov/frb/ma/msu/ProjectionMethodToolsJava/0.0.1-SNAPSHOT/ProjectionMethodToolsJava-0.0.1-SNAPSHOT.jar",   "/msu/res1/Software/mavenRepositories/tryRep/gov/frb/ma/msu/commons-math/1.0-SNAPSHOT/commons-math-1.0-SNAPSHOT.jar",   "/msu/res1/Software/mavenRepositories/tryRep/math/nist/gov/Jama/1.0.3/Jama-1.0.3.jar"];
 ]
+*)

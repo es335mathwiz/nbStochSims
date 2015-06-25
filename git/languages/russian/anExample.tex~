@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{fontspec} % loaded by polyglossia, but included here for transparency 
+\usepackage{polyglossia}
+\setmainlanguage{russian} 
+\setotherlanguage{english}
+
+% XeLaTeX can use any font installed in your system fonts folder
+% Linux Libertine in the next line can be replaced with any 
+% OpenType or TrueType font that supports the Cyrillic script.
+
+\newfontfamily\russianfont[Script=Cyrillic]{Linux Libertine}
+
+\begin{document}
+Привет
+\begin{english}
+Hello! 
+\end{english}
+\end{document}

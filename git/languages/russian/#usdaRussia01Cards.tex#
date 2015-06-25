@@ -1,0 +1,31 @@
+%\NeedsTeXFormat{LaTeX2e}[1996/12/01]
+\documentclass[avery5388,grid,frame]{flashcards}
+%\XeTeXinputencoding "bytes"
+\usepackage[T2A,T1]{fontenc}
+% \usepackage[T2A]{fontenc}
+ \usepackage[utf8]{inputenc}
+ \usepackage[russian,english]{babel}
+ \usepackage{dialogue}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+\newcommand{\inR}[1]{\foreignlanguage{russian}{#1}}
+\begin{document}
+
+\cardfrontfoot{Getting Acquuainted ( Casual)}
+
+\begin{flashcard}[]{Asking About Names}
+
+  \smallskip
+%  \medskip
+  \begin{dialogue}
+    \speak{\inR{Tamara}}Howdy! \inR{Привет!}
+    \speak{\inR{duh}}Howdy!
+  \end{dialogue}
+
+\end{flashcard}
+
+
+
+
+\end{document}

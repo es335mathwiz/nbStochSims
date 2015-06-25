@@ -1,0 +1,17 @@
+\documentclass{article}
+%\usepackage[T2A,T1]{fontenc}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+
+\begin{document}
+
+Text in English
+
+\begin{otherlanguage*}{russian}
+Текст на русском языкеw
+\end{otherlanguage*}
+
+A word and another \foreignlanguage{russian}{слово}
+
+\end{document}

@@ -8,9 +8,11 @@ export http_proxy="http://bender.rsma.frb.gov:3128"
 #http://www.rsma.frb.gov/Guide/Print/Printers.html
 #export my_printer=prn-m2232
 #fsprpr1 for 1454 printer
-export my_printer=colorprk
+#export my_printer=colorprk
+#export my_printer=k16211-ofs-01
+export my_printer=k16520-ofs-01c
 #lpoptions -d prn-m2124 > /dev/null
-#lpoptions -p prn-m2124 -o InputSlot=Tray3 > /dev/null
+#lpoptions -p prn-m2124 -o InputSlot=Tray3 > /dpev/null
 
 
 export LPDEST=$my_printer
