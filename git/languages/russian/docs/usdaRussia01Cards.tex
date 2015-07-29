@@ -1,28 +1,112 @@
-%\NeedsTeXFormat{LaTeX2e}[1996/12/01]
-\documentclass[avery5388,grid,frame]{flashcards}
-%\XeTeXinputencoding "bytes"
+%http://tex.stackexchange.com/questions/816/cyrillic-in-latex
+%M-x set-input-method RET cyrillic-jcuken RET
+%keys-pairs (mapcar* 'cons
+%"йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖ\ЭЯЧСМИТЬБЮ№"
+%"qwertyuiop[]asdfghjkl;'zxcvbnm,.QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>#")
+%M-x toggle-input-method
+%M-x global-set-key to make C-\ toggle
+% http://tex.stackexchange.com/questions/816/cyrillic-in-latex
+% \NeedsTeXFormat{LaTeX2e}[1996/12/01]
+% \documentclass[avery5388,grid,frame]{flashcards}
+\documentclass[avery5371,grid,frame]{flashcards}
+% \XeTeXinputencoding "bytes"
+
 \usepackage[T2A,T1]{fontenc}
 % \usepackage[T2A]{fontenc}
- \usepackage[utf8]{inputenc}
- \usepackage[russian,english]{babel}
- \usepackage{dialogue}
-
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{dialogue}
 \cardfrontstyle[\large\slshape]{headings}
 \cardbackstyle{empty}
 \newcommand{\inR}[1]{\foreignlanguage{russian}{#1}}
+\newcommand{\speakR}[1]{\item \foreignlanguage{russian}{#1}:\ \ }
+\newcommand{\speakE}[1]{\item \foreignlanguage{english}{#1}:\ \ }
+\newcommand{\aDlog}[1]{
+  \begin{list}{\quad}{}
+#1
+  \end{list}}
+
+
 \begin{document}
 
 \cardfrontfoot{Getting Acquuainted ( Casual)}
+\newcommand{\theBack}[1]{
+{\large
+  \begin{center}
+\vspace*{\fill}
+#1
+\vspace*{\fill}
+  \end{center}
+}}
+
 
 \begin{flashcard}[]{Asking About Names}
+  % \medskip
+\theBack{
+\aDlog{
+    \speakR{\inR{Tamaraд}} \inR{Привет!}
+    \speakE{\inR{duh}}Howdy!
+}}
+\end{flashcard}
 
+
+
+
+\begin{flashcard}[]{Asking About Names}
+  \smallskip
+  % \medskip
+\aDlog{
+    \speakR{\inR{Tamaraд}}\inR{как вас зовут}
+    \speakE{\inR{duh}}\inR{меня зовут Gary}
+}
+\end{flashcard}
+
+\cardfrontfoot{Greetings ( Casual)}
+
+\begin{flashcard}[Names]{Vasilly}
+  \inR{васчлий}
+\end{flashcard}
+
+
+\begin{flashcard}[Greetings]{Good Morning}
   \smallskip
 %  \medskip
-  \begin{dialogue}
-    \speak{\inR{Tamara}}Howdy! \inR{Тамара}
-    \speak{\inR{duh}}Howdy!
-  \end{dialogue}
+\inR{Доброе утро}
+\end{flashcard}
 
+\begin{flashcard}[Greetings]{Good Afternoon}
+  \smallskip
+%  \medskip
+\inR{Добрый лень}
+\end{flashcard}
+
+\begin{flashcard}[Greetings]{Good Evening}
+  \smallskip
+%  \medskip
+\inR{Добрый вечер.}
+\end{flashcard}
+
+
+
+\begin{flashcard}[Greetings]{It will be fun.}
+  \smallskip
+%  \medskip
+\inR{Зто будет весело}
+\end{flashcard}
+
+
+
+\begin{flashcard}[Greetings]{It will be great.}
+  \smallskip
+%  \medskip
+\inR{Зто будет здорво}
+\end{flashcard}
+
+
+\begin{flashcard}[Greetings]{Have a good night.}
+  \smallskip
+%  \medskip
+\inR{спокойной ночи}
 \end{flashcard}
 
 

@@ -1,6 +1,9 @@
 (TeX-add-style-hook "usdaRussia01Cards"
  (lambda ()
     (TeX-add-symbols
+     '("aDlog" 1)
+     '("speakE" 1)
+     '("speakR" 1)
      '("inR" 1))
     (TeX-run-style-hooks
      "dialogue"
@@ -15,7 +18,7 @@
      "latex2e"
      "flashcards10"
      "flashcards"
-     "avery5388"
+     "avery5371"
      "grid"
      "frame")))
 

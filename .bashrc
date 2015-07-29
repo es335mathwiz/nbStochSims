@@ -56,8 +56,8 @@ alias toSwish="cd "$SWISHDIR"; cat example"
 #export BIBINPUTS=.
 #export BIBINPUTS=::../../bibFiles::/msu/home/m1gsa00/git/paperProduction/bibFiles
 export TEXINPUTS=
-export TEXINPUTS=../../bibFiles:../../texFiles:$TEXINPUTS
-export BIBINPUTS=../../bibFiles:../../texFiles:$BIBINPUTS
+export TEXINPUTS=../../bibFiles:../../texFiles:$TEXINPUTS::/opt/texlive/2014/texmf-dist/tex/latex/natbib/:~/git/paperProduction/texFiles
+export BIBINPUTS=../../bibFiles:../../texFiles:$BIBINPUTS:/msu/home/m1gsa00/git/paperProduction/bibFiles/::/opt/texlive/2014/texmf-dist/tex/latex/natbib/:~/git/paperProduction/bibFiles
 export CLASSPATH=""
 
 #mathematica
