@@ -10,7 +10,10 @@ export http_proxy="http://bender.rsma.frb.gov:3128"
 #fsprpr1 for 1454 printer
 #export my_printer=colorprk
 #export my_printer=k16211-ofs-01
-export my_printer=k16520-ofs-01c
+#export my_printer=k16520-ofs-01c
+#export my_printer=prn-b5132-color-bw
+#export my_printer=prn-b5130A-color-bw
+export my_printer=mqpr1
 #lpoptions -d prn-m2124 > /dev/null
 #lpoptions -p prn-m2124 -o InputSlot=Tray3 > /dpev/null
 
@@ -31,12 +34,13 @@ export THOME=$DHOME/texFiles
 
 #setup prompt  
 #(http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html)
-export PS1="{\h,\w,\!}$"
-\
-
+#export PS1="{\h,\w,\!}$"
+#\
+#export PS1="xxx"
 #setup place for bins ( will ln -s to this dir
 export RES2=/msu/res2/m1gsa00
 
+export PS1="{\h,\w}$"
 
 #add utility dir to path
 export PATH=$HOME/bin:$PATH
