@@ -28,3 +28,9 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+;;; This brings in a Mathematica mode into emacs
+(add-to-list `load-path "~/.emacs.d/modes/")
+(setq wolfram-program "/opt/mathematica10/math")
+(add-to-list `auto-mode-alist '("\\.mth$" . wolfram-mode))
+(autoload `wolfram-mode "wolfram-mode" nil t)
+(autoload 'run-wolfram "wolfram-mode" nil t)
